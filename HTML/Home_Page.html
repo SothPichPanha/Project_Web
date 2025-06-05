@@ -73,14 +73,14 @@
         <img src="/PHOTO/back.jpg" alt="Background" class="absolute inset-0 w-full h-full object-fill z-0 " />
         <!-- Overlay background for readability (optional) -->
         <div class="relative z-10  bg-opacity-50 p-6 rounded-lg flex flex-col items-center sm:w-300px mx-auto mb-30">
-        <p class="text-xl font-semibold  sm:text-[40px] md:text-[60px]">Read more</p>
+        <p class="text-xl font-semibold  sm:text-[40px] md:text-[60px] ">Read more</p>
         <div class="flex flex-row  justify-between items-center gap-4 md:">
             <p class="text-xl font-semibold sm:text-[40px] md:text-[60px] ">Learn more</p>
             <p class="text-xl font-semibold sm:text-[40px] md:text-[60px] m">Become more</p>
         </div>
             <button 
                 id="bu" 
-                class="mt-4 px-6 py-2 bg-cyan-400 hover:bg-cyan-500 text-black font-bold rounded-full transition md:w-[300px] md:h-[60px] sm:w-[200px] sm:h-[50px] sm:text-[20px] md:text-[30px] lg:text-[40px] lg:w-[400px] lg:h-[80px]"
+                class="mt-4 px-6 py-2 bg-cyan-400 hover:bg-cyan-500 text-black font-bold rounded-full transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 md:w-[300px] md:h-[60px] sm:w-[200px] sm:h-[50px] sm:text-[20px] md:text-[30px] lg:text-[40px] lg:w-[400px] lg:h-[80px]"
             >
                 Read Now
             </button>
@@ -96,7 +96,8 @@
     <!-- Book Cards Grid -->
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 mt-8 mb-16">
         <!-- Row 1 -->
-        <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
+         <a href="Book_view.html">
+                    <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
             <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
                 <img src="/PHOTO/1My Heavenly Favorite.webp" alt="Book Cover" class="w-full h-full object-cover">
             </div>
@@ -114,14 +115,16 @@
                     <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border">Available</span>
                 </div>
             </div>
-        </div>
+            </div>
+         </a>
+
 
         <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
             <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
-                <img src="https://via.placeholder.com/150x200/1f2937/ffffff?text=Book+2" alt="Book Cover" class="w-full h-full object-cover">
+                <img src="/PHOTO/2That's All I Know.jpg" alt="Book Cover" class="w-full h-full object-cover">
             </div>
             <div class="space-y-2">
-                <h3 class="text-gray-800 font-semibold text-sm">The Night Circus</h3>
+                <h3 class="text-gray-800 font-semibold text-sm">That's All I Know.jpg</h3>
                 <p class="text-gray-600 text-xs">Erin Morgenstern</p>
                 <div class="flex items-center space-x-1">
                     <div class="flex space-x-0.5">
@@ -137,10 +140,10 @@
 
         <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
             <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
-                <img src="https://via.placeholder.com/150x200/3b82f6/ffffff?text=Book+3" alt="Book Cover" class="w-full h-full object-cover">
+                <img src="/PHOTO/3My Friends.webp" alt="Book Cover" class="w-full h-full object-cover">
             </div>
             <div class="space-y-2">
-                <h3 class="text-gray-800 font-semibold text-sm">The Midnight Library</h3>
+                <h3 class="text-gray-800 font-semibold text-sm">My Friend</h3>
                 <p class="text-gray-600 text-xs">Matt Haig</p>
                 <div class="flex items-center space-x-1">
                     <div class="flex space-x-0.5">
@@ -157,10 +160,10 @@
 
         <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
             <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
-                <img src="https://via.placeholder.com/150x200/10b981/ffffff?text=Book+4" alt="Book Cover" class="w-full h-full object-cover">
+                <img src="/PHOTO/5Enter.png" alt="Book Cover" class="w-full h-full object-cover">
             </div>
             <div class="space-y-2">
-                <h3 class="text-gray-800 font-semibold text-sm">Atomic Habits</h3>
+                <h3 class="text-gray-800 font-semibold text-sm">Enter</h3>
                 <p class="text-gray-600 text-xs">James Clear</p>
                 <div class="flex items-center space-x-1">
                     <div class="flex space-x-0.5">
@@ -169,17 +172,17 @@
                     <span class="text-gray-700 text-xs">5 Star</span>
                 </div>
                 <div class="flex justify-end">
-                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border">Available</span>
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border text-red-500">Out of stock</span>
                 </div>
             </div>
         </div>
 
         <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
             <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
-                <img src="https://via.placeholder.com/150x200/8b5cf6/ffffff?text=Book+5" alt="Book Cover" class="w-full h-full object-cover">
+                <img src="/PHOTO/6The Lilac People.jpg" alt="Book Cover" class="w-full h-full object-cover">
             </div>
             <div class="space-y-2">
-                <h3 class="text-gray-800 font-semibold text-sm">The Seven Moons</h3>
+                <h3 class="text-gray-800 font-semibold text-sm">The Lilac People</h3>
                 <p class="text-gray-600 text-xs">Rebecca Kim</p>
                 <div class="flex items-center space-x-1">
                     <div class="flex space-x-0.5">
@@ -197,10 +200,10 @@
         <!-- Row 2 -->
         <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
             <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
-                <img src="https://via.placeholder.com/150x200/ef4444/ffffff?text=Book+6" alt="Book Cover" class="w-full h-full object-cover">
+                <img src="/PHOTO/7The Pretender.jpg" alt="Book Cover" class="w-full h-full object-cover">
             </div>
             <div class="space-y-2">
-                <h3 class="text-gray-800 font-semibold text-sm">The Silent Patient</h3>
+                <h3 class="text-gray-800 font-semibold text-sm">The Pretender</h3>
                 <p class="text-gray-600 text-xs">Alex Michaelides</p>
                 <div class="flex items-center space-x-1">
                     <div class="flex space-x-0.5">
@@ -217,10 +220,10 @@
 
         <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
             <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
-                <img src="https://via.placeholder.com/150x200/f59e0b/ffffff?text=Book+7" alt="Book Cover" class="w-full h-full object-cover">
+                <img src="/PHOTO/8The Road to Tender Hearts.webp" alt="Book Cover" class="w-full h-full object-cover">
             </div>
             <div class="space-y-2">
-                <h3 class="text-gray-800 font-semibold text-sm">Little People Big World</h3>
+                <h3 class="text-gray-800 font-semibold text-sm">The Road to Tender Hearts</h3>
                 <p class="text-gray-600 text-xs">Sandra Mitchell</p>
                 <div class="flex items-center space-x-1">
                     <div class="flex space-x-0.5">
@@ -236,10 +239,10 @@
 
         <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
             <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
-                <img src="https://via.placeholder.com/150x200/84cc16/ffffff?text=Book+8" alt="Book Cover" class="w-full h-full object-cover">
+                <img src="/PHOTO/9Charlottesville.webp" alt="Book Cover" class="w-full h-full object-cover">
             </div>
             <div class="space-y-2">
-                <h3 class="text-gray-800 font-semibold text-sm">Revolutionary Road</h3>
+                <h3 class="text-gray-800 font-semibold text-sm">Charlottesville</h3>
                 <p class="text-gray-600 text-xs">Richard Yates</p>
                 <div class="flex items-center space-x-1">
                     <div class="flex space-x-0.5">
@@ -249,17 +252,17 @@
                     <span class="text-gray-700 text-xs">4 Star</span>
                 </div>
                 <div class="flex justify-end">
-                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border">Available</span>
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border text-red-500">Out of stock</span>
                 </div>
             </div>
         </div>
 
         <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
             <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
-                <img src="https://via.placeholder.com/150x200/06b6d4/ffffff?text=Book+9" alt="Book Cover" class="w-full h-full object-cover">
+                <img src="/PHOTO/10I Gave You Eyes and You Looked Toward Darkness.jpg" alt="Book Cover" class="w-full h-full object-cover">
             </div>
             <div class="space-y-2">
-                <h3 class="text-gray-800 font-semibold text-sm">The Road to Hearts</h3>
+                <h3 class="text-gray-800 font-semibold text-sm">I Gave You Eyes and You Looked Toward Darkness</h3>
                 <p class="text-gray-600 text-xs">Margaret Rose</p>
                 <div class="flex items-center space-x-1">
                     <div class="flex space-x-0.5">
@@ -275,10 +278,10 @@
 
         <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
             <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
-                <img src="https://via.placeholder.com/150x200/ec4899/ffffff?text=Book+10" alt="Book Cover" class="w-full h-full object-cover">
+                <img src="/PHOTO/11Paradiso.webp" alt="Book Cover" class="w-full h-full object-cover">
             </div>
             <div class="space-y-2">
-                <h3 class="text-gray-800 font-semibold text-sm">Ocean's Edge</h3>
+                <h3 class="text-gray-800 font-semibold text-sm">Paradiso</h3>
                 <p class="text-gray-600 text-xs">David Harrison</p>
                 <div class="flex items-center space-x-1">
                     <div class="flex space-x-0.5">
@@ -288,7 +291,7 @@
                     <span class="text-gray-700 text-xs">4 Star</span>
                 </div>
                 <div class="flex justify-end">
-                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border">Available</span>
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border text-red-500">Out of stock</span>
                 </div>
             </div>
         </div>
@@ -296,10 +299,10 @@
         <!-- Row 3 -->
         <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
             <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
-                <img src="https://via.placeholder.com/150x200/6366f1/ffffff?text=Book+11" alt="Book Cover" class="w-full h-full object-cover">
+                <img src="/PHOTO/12Trying.webp" alt="Book Cover" class="w-full h-full object-cover">
             </div>
             <div class="space-y-2">
-                <h3 class="text-gray-800 font-semibold text-sm">Digital Fortress</h3>
+                <h3 class="text-gray-800 font-semibold text-sm">Trying</h3>
                 <p class="text-gray-600 text-xs">Dan Brown</p>
                 <div class="flex items-center space-x-1">
                     <div class="flex space-x-0.5">
@@ -316,10 +319,10 @@
 
         <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
             <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
-                <img src="https://via.placeholder.com/150x200/f97316/ffffff?text=Book+12" alt="Book Cover" class="w-full h-full object-cover">
+                <img src="/PHOTO/13Origin Stories.webp" alt="Book Cover" class="w-full h-full object-cover">
             </div>
             <div class="space-y-2">
-                <h3 class="text-gray-800 font-semibold text-sm">Modern Romance</h3>
+                <h3 class="text-gray-800 font-semibold text-sm">Origin Stories</h3>
                 <p class="text-gray-600 text-xs">Aziz Ansari</p>
                 <div class="flex items-center space-x-1">
                     <div class="flex space-x-0.5">
@@ -335,10 +338,10 @@
 
         <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
             <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
-                <img src="https://via.placeholder.com/150x200/14b8a6/ffffff?text=Book+13" alt="Book Cover" class="w-full h-full object-cover">
+                <img src="/PHOTO/14Little Mercy.jpg" alt="Book Cover" class="w-full h-full object-cover">
             </div>
             <div class="space-y-2">
-                <h3 class="text-gray-800 font-semibold text-sm">The Art of War</h3>
+                <h3 class="text-gray-800 font-semibold text-sm">Little Mercy</h3>
                 <p class="text-gray-600 text-xs">Sun Tzu</p>
                 <div class="flex items-center space-x-1">
                     <div class="flex space-x-0.5">
@@ -354,10 +357,10 @@
 
         <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
             <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
-                <img src="https://via.placeholder.com/150x200/a855f7/ffffff?text=Book+14" alt="Book Cover" class="w-full h-full object-cover">
+                <img src="/PHOTO/17The Savvy Working Mom.webp" alt="Book Cover" class="w-full h-full object-cover">
             </div>
             <div class="space-y-2">
-                <h3 class="text-gray-800 font-semibold text-sm">Sapiens</h3>
+                <h3 class="text-gray-800 font-semibold text-sm">The Savvy Working Mom</h3>
                 <p class="text-gray-600 text-xs">Yuval Noah Harari</p>
                 <div class="flex items-center space-x-1">
                     <div class="flex space-x-0.5">
@@ -373,10 +376,10 @@
 
         <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
             <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
-                <img src="https://via.placeholder.com/150x200/dc2626/ffffff?text=Book+15" alt="Book Cover" class="w-full h-full object-cover">
+                <img src="/PHOTO/16We Can Do Hard Things.webp" alt="Book Cover" class="w-full h-full object-cover">
             </div>
             <div class="space-y-2">
-                <h3 class="text-gray-800 font-semibold text-sm">Think Fast and Slow</h3>
+                <h3 class="text-gray-800 font-semibold text-sm">We Can Do Hard Things</h3>
                 <p class="text-gray-600 text-xs">Daniel Kahneman</p>
                 <div class="flex items-center space-x-1">
                     <div class="flex space-x-0.5">
@@ -393,7 +396,136 @@
 
     </div>
 
+    <!-- Our Popular Book Section -->
+<div class="mt-10 mb-8">
+    <h2 class="text-center text-2xl font-semibold mb-8">Our Popular Book</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 justify-items-center">
+        <!-- Book 1 -->
+        <div class="bg-amber-100 rounded-2xl p-4 shadow-lg w-60">
+            <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
+                <img src="/PHOTO/9Charlottesville.webp" alt="Book Cover" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-gray-800 font-semibold text-sm">Charlottesville</h3>
+                <p class="text-gray-600 text-xs">Richard Yates</p>
+                <div class="flex items-center space-x-1">
+                    <div class="flex space-x-0.5">
+                        <span class="text-red-500 text-sm">★★★★</span>
+                        <span class="text-gray-300 text-sm">★</span>
+                    </div>
+                    <span class="text-gray-700 text-xs">4 Star</span>
+                </div>
+                <div class="flex justify-end">
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border text-red-500">Out of stock</span>
+                </div>
+            </div>
+        </div>
+        <!-- Book 2 -->
+        <div class="bg-amber-100 rounded-2xl p-4 shadow-lg w-60">
+            <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
+                <img src="/PHOTO/10I Gave You Eyes and You Looked Toward Darkness.jpg" alt="Book Cover" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-gray-800 font-semibold text-sm">I Gave You Eyes and You Looked Toward Darkness</h3>
+                <p class="text-gray-600 text-xs">Margaret Rose</p>
+                <div class="flex items-center space-x-1">
+                    <div class="flex space-x-0.5">
+                        <span class="text-red-500 text-sm">★★★★★</span>
+                    </div>
+                    <span class="text-gray-700 text-xs">5 Star</span>
+                </div>
+                <div class="flex justify-end">
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border">Available</span>
+                </div>
+            </div>
+        </div>
+        <!-- Book 3 -->
+        <div class="bg-amber-100 rounded-2xl p-4 shadow-lg w-60">
+            <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
+                <img src="/PHOTO/11Paradiso.webp" alt="Book Cover" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-gray-800 font-semibold text-sm">Paradiso</h3>
+                <p class="text-gray-600 text-xs">David Harrison</p>
+                <div class="flex items-center space-x-1">
+                    <div class="flex space-x-0.5">
+                        <span class="text-red-500 text-sm">★★★★</span>
+                        <span class="text-gray-300 text-sm">★</span>
+                    </div>
+                    <span class="text-gray-700 text-xs">4 Star</span>
+                </div>
+                <div class="flex justify-end">
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border text-red-500">Out of stock</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- Our Best Selling Book Section -->
+<div class="mb-16">
+    <h2 class="text-center text-2xl font-semibold mb-8">Our best Selling Book</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 justify-items-center">
+        <!-- Book 1 -->
+        <div class="bg-amber-100 rounded-2xl p-4 shadow-lg w-60">
+            <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
+                <img src="/PHOTO/12Trying.webp" alt="Book Cover" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-gray-800 font-semibold text-sm">Trying</h3>
+                <p class="text-gray-600 text-xs">Dan Brown</p>
+                <div class="flex items-center space-x-1">
+                    <div class="flex space-x-0.5">
+                        <span class="text-red-500 text-sm">★★★★</span>
+                        <span class="text-gray-300 text-sm">★</span>
+                    </div>
+                    <span class="text-gray-700 text-xs">4 Star</span>
+                </div>
+                <div class="flex justify-end">
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border">Available</span>
+                </div>
+            </div>
+        </div>
+        <!-- Book 2 -->
+        <div class="bg-amber-100 rounded-2xl p-4 shadow-lg w-60">
+            <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
+                <img src="/PHOTO/13Origin Stories.webp" alt="Book Cover" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-gray-800 font-semibold text-sm">Origin Stories</h3>
+                <p class="text-gray-600 text-xs">Aziz Ansari</p>
+                <div class="flex items-center space-x-1">
+                    <div class="flex space-x-0.5">
+                        <span class="text-red-500 text-sm">★★★★★</span>
+                    </div>
+                    <span class="text-gray-700 text-xs">5 Star</span>
+                </div>
+                <div class="flex justify-end">
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border">Available</span>
+                </div>
+            </div>
+        </div>
+        <!-- Book 3 -->
+        <div class="bg-amber-100 rounded-2xl p-4 shadow-lg w-60">
+            <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
+                <img src="/PHOTO/14Little Mercy.jpg" alt="Book Cover" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-gray-800 font-semibold text-sm">Little Mercy</h3>
+                <p class="text-gray-600 text-xs">Sun Tzu</p>
+                <div class="flex items-center space-x-1">
+                    <div class="flex space-x-0.5">
+                        <span class="text-red-500 text-sm">★★★★★</span>
+                    </div>
+                    <span class="text-gray-700 text-xs">5 Star</span>
+                </div>
+                <div class="flex justify-end">
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border">Available</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </main>
 
 <footer>
