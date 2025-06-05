@@ -1,0 +1,8 @@
+<div class="flex flex-wrap gap-5 justify-between items-start mt-72 w-full text-black max-w-[1211px] max-md:mt-10 max-md:max-w-full">
+                <div class="text-4xl">Book</div>
+                <div class="mt-5 text-2xl cursor-pointer hover:underline">See all</div>
+            </div>
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/40a2b9ee026b4218aa82fb74db7eb73f9f60e963?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain mt-4 w-full aspect-[3.1] max-w-[1243px] max-md:max-w-full" alt="Book Collection 1" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a21a59244e2c2f21cf4fa81666cf994ed7175605?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain mt-16 w-full aspect-[3.1] max-w-[1243px] max-md:mt-10 max-md:max-w-full" alt="Book Collection 2" />
+           
+</main>

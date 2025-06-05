@@ -1,0 +1,405 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="/CSS/Home_Page.css">
+
+</head>
+<body class="mx-8 sm:mx-10 bg-[#FBF3E6]">
+<header class="sticky top-0 my-10 bg-[#FBF3E6] z-50">
+    <div class="flex justify-between my-4 sm:items-center">
+        <!-- Hamburger Menu -->
+        <button id="menu-button" id="mobile-menu" class="sm:w-8 sm:h-8 sm:rounded-full sm:flex items-center sm:justify-center md:hidden">
+            <img src="/PHOTO/Menu.png" alt="">
+        </button>
+
+        <!-- Navigation (Desktop) -->
+        <div id="home" class="hidden md:flex md:flex-col md:font-bold md:text-[20px] md:py-4 md:gap-4">
+            <nav>
+                <ul class="md:flex md:flex-row md:gap-4 md:items-center md:justify-center">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Logo -->
+        <div id="logo" class="flex items-center w-fit">
+            <img src="/PHOTO/Logo.png" alt="" class="sm:h-10 sm:w-25 h-8 w-15">
+            <h2 class="sm:py-4 font-bold sm:text-[20px] text-[15px]">Best Book Store</h2>
+        </div>
+
+        <!-- Cart & Profile -->
+        <div class="w-fit sm:flex sm:items-center sm:gap-2 sm:my-2">
+            <div class="flex items-center gap-4">
+                <!-- Search Bar (Desktop) -->
+                <div class="hidden md:flex items-center bg-white rounded-full border border-gray-300 px-4 py-2 w-48">
+                    <input type="text" placeholder="Search" class="flex-1 outline-none text-sm bg-transparent">
+                    <img src="/PHOTO/search_icon.png" alt="">
+                </div>
+
+                <!-- Search Icon (Mobile) -->
+                <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center md:hidden">
+                    <img src="/PHOTO/search.png" class="" alt="">
+                </button>
+
+                <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center">
+                    <img src="/PHOTO/Shopping Cart.png" alt="">
+                </button>
+
+                <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center">
+                    <img src="/PHOTO/Customer.png" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" id="menu-button" class="sm:hidden md:hidden hidden absolute top-full left-0 w-full bg-[#FBF3E6] z-50 p-4 space-y-4 shadow-md sm:absolute sm:top-full sm:left-0 sm:w-full sm:bg-[#FBF3E6] sm:z-50 sm:p-4 sm:space-y-4 sm:shadow-md">
+        <a href="index.html" class="block text-lg hover:text-gray-500 transition-all">Home</a>
+        <a href="services.html" class="block text-lg hover:text-gray-500 transition-all">Services</a>
+        <a href="about.html" class="block text-lg hover:text-gray-500 transition-all">About Us</a>
+        <a href="#contact" class="block text-lg hover:text-gray-500 transition-all">Contact</a>
+    </div>
+</header>
+
+<main>
+  <!-- Background image section with overlay content -->
+    <div class="relative w-full h-[300px] sm:h-[500px] md:h-[940px] flex items-center justify-center text-white ">
+        <!-- Full background image -->
+        <img src="/PHOTO/back.jpg" alt="Background" class="absolute inset-0 w-full h-full object-fill z-0 " />
+        <!-- Overlay background for readability (optional) -->
+        <div class="relative z-10  bg-opacity-50 p-6 rounded-lg flex flex-col items-center sm:w-300px mx-auto mb-30">
+        <p class="text-xl font-semibold  sm:text-[40px] md:text-[60px]">Read more</p>
+        <div class="flex flex-row  justify-between items-center gap-4 md:">
+            <p class="text-xl font-semibold sm:text-[40px] md:text-[60px] ">Learn more</p>
+            <p class="text-xl font-semibold sm:text-[40px] md:text-[60px] m">Become more</p>
+        </div>
+            <button 
+                id="bu" 
+                class="mt-4 px-6 py-2 bg-cyan-400 hover:bg-cyan-500 text-black font-bold rounded-full transition md:w-[300px] md:h-[60px] sm:w-[200px] sm:h-[50px] sm:text-[20px] md:text-[30px] lg:text-[40px] lg:w-[400px] lg:h-[80px]"
+            >
+                Read Now
+            </button>
+        </div>
+    </div>
+
+    <!-- Book Categories Section -->
+    <div class="flex justify-between flex-row mt-10 mb-4 mt-30">
+        <div class="text-[25px]">Book</div>
+        <div class="md:float-right text-[25px] cursor-pointer hover:underline">See all</div>
+    </div>
+
+    <!-- Book Cards Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 mt-8 mb-16">
+        <!-- Row 1 -->
+        <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
+                <img src="/PHOTO/1My Heavenly Favorite.webp" alt="Book Cover" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-gray-800 font-semibold text-sm">My Heavenly Favorite</h3>
+                <p class="text-gray-600 text-xs">Lucas Rijneveld</p>
+                <div class="flex items-center space-x-1">
+                    <div class="flex space-x-0.5">
+                        <span class="text-red-500 text-sm">★★★★</span>
+                        <span class="text-gray-300 text-sm">★</span>
+                    </div>
+                    <span class="text-gray-700 text-xs">4 Star</span>
+                </div>
+                <div class="flex justify-end">
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border">Available</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
+                <img src="https://via.placeholder.com/150x200/1f2937/ffffff?text=Book+2" alt="Book Cover" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-gray-800 font-semibold text-sm">The Night Circus</h3>
+                <p class="text-gray-600 text-xs">Erin Morgenstern</p>
+                <div class="flex items-center space-x-1">
+                    <div class="flex space-x-0.5">
+                        <span class="text-red-500 text-sm">★★★★★</span>
+                    </div>
+                    <span class="text-gray-700 text-xs">5 Star</span>
+                </div>
+                <div class="flex justify-end">
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border">Available</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
+                <img src="https://via.placeholder.com/150x200/3b82f6/ffffff?text=Book+3" alt="Book Cover" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-gray-800 font-semibold text-sm">The Midnight Library</h3>
+                <p class="text-gray-600 text-xs">Matt Haig</p>
+                <div class="flex items-center space-x-1">
+                    <div class="flex space-x-0.5">
+                        <span class="text-red-500 text-sm">★★★★</span>
+                        <span class="text-gray-300 text-sm">★</span>
+                    </div>
+                    <span class="text-gray-700 text-xs">4 Star</span>
+                </div>
+                <div class="flex justify-end">
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border">Available</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
+                <img src="https://via.placeholder.com/150x200/10b981/ffffff?text=Book+4" alt="Book Cover" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-gray-800 font-semibold text-sm">Atomic Habits</h3>
+                <p class="text-gray-600 text-xs">James Clear</p>
+                <div class="flex items-center space-x-1">
+                    <div class="flex space-x-0.5">
+                        <span class="text-red-500 text-sm">★★★★★</span>
+                    </div>
+                    <span class="text-gray-700 text-xs">5 Star</span>
+                </div>
+                <div class="flex justify-end">
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border">Available</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
+                <img src="https://via.placeholder.com/150x200/8b5cf6/ffffff?text=Book+5" alt="Book Cover" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-gray-800 font-semibold text-sm">The Seven Moons</h3>
+                <p class="text-gray-600 text-xs">Rebecca Kim</p>
+                <div class="flex items-center space-x-1">
+                    <div class="flex space-x-0.5">
+                        <span class="text-red-500 text-sm">★★★★</span>
+                        <span class="text-gray-300 text-sm">★</span>
+                    </div>
+                    <span class="text-gray-700 text-xs">4 Star</span>
+                </div>
+                <div class="flex justify-end">
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border">Available</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
+                <img src="https://via.placeholder.com/150x200/ef4444/ffffff?text=Book+6" alt="Book Cover" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-gray-800 font-semibold text-sm">The Silent Patient</h3>
+                <p class="text-gray-600 text-xs">Alex Michaelides</p>
+                <div class="flex items-center space-x-1">
+                    <div class="flex space-x-0.5">
+                        <span class="text-red-500 text-sm">★★★★</span>
+                        <span class="text-gray-300 text-sm">★</span>
+                    </div>
+                    <span class="text-gray-700 text-xs">4 Star</span>
+                </div>
+                <div class="flex justify-end">
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border">Available</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
+                <img src="https://via.placeholder.com/150x200/f59e0b/ffffff?text=Book+7" alt="Book Cover" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-gray-800 font-semibold text-sm">Little People Big World</h3>
+                <p class="text-gray-600 text-xs">Sandra Mitchell</p>
+                <div class="flex items-center space-x-1">
+                    <div class="flex space-x-0.5">
+                        <span class="text-red-500 text-sm">★★★★★</span>
+                    </div>
+                    <span class="text-gray-700 text-xs">5 Star</span>
+                </div>
+                <div class="flex justify-end">
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border">Available</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
+                <img src="https://via.placeholder.com/150x200/84cc16/ffffff?text=Book+8" alt="Book Cover" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-gray-800 font-semibold text-sm">Revolutionary Road</h3>
+                <p class="text-gray-600 text-xs">Richard Yates</p>
+                <div class="flex items-center space-x-1">
+                    <div class="flex space-x-0.5">
+                        <span class="text-red-500 text-sm">★★★★</span>
+                        <span class="text-gray-300 text-sm">★</span>
+                    </div>
+                    <span class="text-gray-700 text-xs">4 Star</span>
+                </div>
+                <div class="flex justify-end">
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border">Available</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
+                <img src="https://via.placeholder.com/150x200/06b6d4/ffffff?text=Book+9" alt="Book Cover" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-gray-800 font-semibold text-sm">The Road to Hearts</h3>
+                <p class="text-gray-600 text-xs">Margaret Rose</p>
+                <div class="flex items-center space-x-1">
+                    <div class="flex space-x-0.5">
+                        <span class="text-red-500 text-sm">★★★★★</span>
+                    </div>
+                    <span class="text-gray-700 text-xs">5 Star</span>
+                </div>
+                <div class="flex justify-end">
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border">Available</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
+                <img src="https://via.placeholder.com/150x200/ec4899/ffffff?text=Book+10" alt="Book Cover" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-gray-800 font-semibold text-sm">Ocean's Edge</h3>
+                <p class="text-gray-600 text-xs">David Harrison</p>
+                <div class="flex items-center space-x-1">
+                    <div class="flex space-x-0.5">
+                        <span class="text-red-500 text-sm">★★★★</span>
+                        <span class="text-gray-300 text-sm">★</span>
+                    </div>
+                    <span class="text-gray-700 text-xs">4 Star</span>
+                </div>
+                <div class="flex justify-end">
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border">Available</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
+                <img src="https://via.placeholder.com/150x200/6366f1/ffffff?text=Book+11" alt="Book Cover" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-gray-800 font-semibold text-sm">Digital Fortress</h3>
+                <p class="text-gray-600 text-xs">Dan Brown</p>
+                <div class="flex items-center space-x-1">
+                    <div class="flex space-x-0.5">
+                        <span class="text-red-500 text-sm">★★★★</span>
+                        <span class="text-gray-300 text-sm">★</span>
+                    </div>
+                    <span class="text-gray-700 text-xs">4 Star</span>
+                </div>
+                <div class="flex justify-end">
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border">Available</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
+                <img src="https://via.placeholder.com/150x200/f97316/ffffff?text=Book+12" alt="Book Cover" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-gray-800 font-semibold text-sm">Modern Romance</h3>
+                <p class="text-gray-600 text-xs">Aziz Ansari</p>
+                <div class="flex items-center space-x-1">
+                    <div class="flex space-x-0.5">
+                        <span class="text-red-500 text-sm">★★★★★</span>
+                    </div>
+                    <span class="text-gray-700 text-xs">5 Star</span>
+                </div>
+                <div class="flex justify-end">
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border">Available</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
+                <img src="https://via.placeholder.com/150x200/14b8a6/ffffff?text=Book+13" alt="Book Cover" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-gray-800 font-semibold text-sm">The Art of War</h3>
+                <p class="text-gray-600 text-xs">Sun Tzu</p>
+                <div class="flex items-center space-x-1">
+                    <div class="flex space-x-0.5">
+                        <span class="text-red-500 text-sm">★★★★★</span>
+                    </div>
+                    <span class="text-gray-700 text-xs">5 Star</span>
+                </div>
+                <div class="flex justify-end">
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border">Available</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
+                <img src="https://via.placeholder.com/150x200/a855f7/ffffff?text=Book+14" alt="Book Cover" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-gray-800 font-semibold text-sm">Sapiens</h3>
+                <p class="text-gray-600 text-xs">Yuval Noah Harari</p>
+                <div class="flex items-center space-x-1">
+                    <div class="flex space-x-0.5">
+                        <span class="text-red-500 text-sm">★★★★★</span>
+                    </div>
+                    <span class="text-gray-700 text-xs">5 Star</span>
+                </div>
+                <div class="flex justify-end">
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border">Available</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-amber-100 rounded-2xl p-4 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="rounded-lg aspect-[3/4] overflow-hidden mb-3">
+                <img src="https://via.placeholder.com/150x200/dc2626/ffffff?text=Book+15" alt="Book Cover" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-gray-800 font-semibold text-sm">Think Fast and Slow</h3>
+                <p class="text-gray-600 text-xs">Daniel Kahneman</p>
+                <div class="flex items-center space-x-1">
+                    <div class="flex space-x-0.5">
+                        <span class="text-red-500 text-sm">★★★★</span>
+                        <span class="text-gray-300 text-sm">★</span>
+                    </div>
+                    <span class="text-gray-700 text-xs">4 Star</span>
+                </div>
+                <div class="flex justify-end">
+                    <span class="bg-white px-3 py-1 rounded-full text-xs font-medium text-gray-700 border">Available</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</main>
+
+<footer>
+    
+</footer>
+
+<script src="/JS/index.js"></script>
+</body>
+</html>
