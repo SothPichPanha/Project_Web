@@ -1,0 +1,165 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="/CSS/Home_Page.css">
+     
+    <link rel="stylesheet" href="/CSS/styleguide.css" />
+    <link rel="stylesheet" href="/CSS/style.css" />
+
+</head>
+<body class="mx-8 sm:mx-10 bg-[#FBF3E6]">
+<header class="sticky top-0 my-10 bg-[#FBF3E6] z-50">
+    <div class="flex justify-between my-4 sm:items-center">
+        <!-- Hamburger Menu -->
+        <button id="menu-button" id="mobile-menu" class="sm:w-8 sm:h-8 sm:rounded-full sm:flex items-center sm:justify-center md:hidden">
+            <img src="/PHOTO/Menu.png" alt="">
+        </button>
+
+        <!-- Navigation (Desktop) -->
+        <div id="home" class="hidden md:flex md:flex-col md:font-bold md:text-[20px] md:py-4 md:gap-4">
+            <nav>
+                <ul class="md:flex md:flex-row md:gap-4 md:items-center md:justify-center">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Logo -->
+        <div id="logo" class="flex items-center w-fit">
+            <img src="/PHOTO/Logo.png" alt="" class="sm:h-10 sm:w-25 h-8 w-15">
+            <h2 class="sm:py-4 font-bold sm:text-[20px] text-[15px]">Best Book Store</h2>
+        </div>
+
+        <!-- Cart & Profile -->
+        <div class="w-fit sm:flex sm:items-center sm:gap-2 sm:my-2">
+            <div class="flex items-center gap-4">
+                <!-- Search Bar (Desktop) -->
+                <div class="hidden md:flex items-center bg-white rounded-full border border-gray-300 px-4 py-2 w-48">
+                    <input type="text" placeholder="Search" class="flex-1 outline-none text-sm bg-transparent">
+                    <img src="/PHOTO/search_icon.png" alt="">
+                </div>
+
+                <!-- Search Icon (Mobile) -->
+                <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center md:hidden">
+                    <img src="/PHOTO/search.png" class="" alt="">
+                </button>
+
+                <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center">
+                    <img src="/PHOTO/Shopping Cart.png" alt="">
+                </button>
+
+                <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center">
+                    <img src="/PHOTO/Customer.png" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" id="menu-button" class="sm:hidden md:hidden hidden absolute top-full left-0 w-full bg-[#FBF3E6] z-50 p-4 space-y-4 shadow-md sm:absolute sm:top-full sm:left-0 sm:w-full sm:bg-[#FBF3E6] sm:z-50 sm:p-4 sm:space-y-4 sm:shadow-md">
+        <a href="index.html" class="block text-lg hover:text-gray-500 transition-all">Home</a>
+        <a href="services.html" class="block text-lg hover:text-gray-500 transition-all">Services</a>
+        <a href="about.html" class="block text-lg hover:text-gray-500 transition-all">About Us</a>
+        <a href="#contact" class="block text-lg hover:text-gray-500 transition-all">Contact</a>
+    </div>
+</header>
+
+<main>
+     <div class="book-view">
+      <div class="div">
+        <div class="frame">
+          <div class="frame-2">
+            <img class="rectangle" src="img/rectangle-8.png" />
+            <img class="img" src="img/rectangle-17.png" />
+            <img class="rectangle-2" src="img/rectangle-18.png" />
+            <img class="rectangle-3" src="img/rectangle-19.png" />
+            <img class="rectangle-4" src="img/rectangle-20.png" />
+            <img class="rectangle-5" src="img/rectangle-21.png" />
+            <img class="rectangle-6" src="img/rectangle-22.png" />
+            <img class="rectangle-7" src="img/image.png" />
+          </div>
+        </div>
+        <p class="p">Best Sellers of the Week</p>
+        <div class="frame-5">
+          <img class="rectangle-9" src="img/rectangle-7.png" />
+          <div class="frame-6">
+            <div class="text-wrapper-8">My Heavenly Favorite</div>
+            <div class="text-wrapper-9">Description</div>
+            <div class="overlap">
+              <p class="bookshop-org-has-the">
+                <span class="span">Bookshop.org has the </span>
+                <span class="text-wrapper-10">highest-rated customer service</span>
+                <span class="span"> of any bookstore in the world</span>
+              </p>
+              <div class="overlap-group">
+                <img class="star" src="img/star-2.png" /> <img class="star-2" src="img/star-4.png" />
+              </div>
+              <div class="overlap-2">
+                <img class="star-3" src="img/star-3.png" /> <img class="star-2" src="img/star.png" />
+              </div>
+              <div class="text-wrapper-11">4/5</div>
+              <div class="text-wrapper-12">21,000+ Reviews</div>
+            </div>
+            <img class="back" src="img/back-2.png" />
+            <p class="in-enter-poet-jim">
+              In Enter, poet Jim Moore navigates the public spaces of his neighborhood—parks, boardwalks, piazzas, even
+              parking garages—and encounters people negotiating mortality in the pandemic age just as he is coming to
+              terms with his own long story. In his signature lucid and wry voice, Moore acknowledges suffering while
+              making room for joy and for moments of peace. These poems offer shelter to readers and, in summoning poets
+              like Rilke and Tsvetaeva, remind us that poetry’s tenderness can be repaid in tenderness. “Please show me
+              how to be you,” he writes in deeply intimate lines revealing a poettapped into the networks of human
+              connection vibrating under the surface of all the places humans gather.<br /><br />Enter is a collection
+              of thoughtful meditations on hope at a moment when hope seems far-fetched, when humanity is faced with the
+              inevitability of being “grazed upon by earth.” Yet Moore finds the joy, he writes of shyness and the bells
+              of a church resounding, of counting hours: “I find words. I write of love.” Enter is a collection of
+              thoughtful meditations on hope at a moment when hope seems farfetched, when humanity is faced with the
+              inevitability of being ‘grazed upon by earth.” Yet Jim Moore finds the joy, he writes of shyness and the
+              bells of a church resounding, of counting hours: “I find words. I write of love.”
+            </p>
+            <div class="text-wrapper-13">Product Details</div>
+            <img class="back-2" src="img/back.png" />
+            <p class="publisher-graywolf">
+              <span class="text-wrapper-14">Publisher</span>
+              <span class="text-wrapper-10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Graywolf Press<br /></span>
+              <span class="text-wrapper-15">Publish Date</span>
+              <span class="text-wrapper-10">&nbsp;&nbsp; May 06, 2025</span>
+            </p>
+            <div class="frame-7">
+              <div class="text-wrapper-16">ADD TO WISHLIST</div>
+              <img class="heart" src="img/heart.png" />
+            </div>
+            <p class="a-novel-lucas">
+              <span class="text-wrapper-10">A Novel<br /></span>
+              <span class="text-wrapper-17">Lucas Rijneveld</span>
+              <span class="text-wrapper-10"> (Author)</span>
+            </p>
+            <p class="element"><span class="text-wrapper-18">$</span> <span class="text-wrapper-19">10.00</span></p>
+            <div class="text-wrapper-20">$8.99</div>
+            <div class="text-wrapper-21">Available</div>
+            <img class="done" src="img/done.png" />
+            <div class="overlap-group-wrapper">
+              <div class="overlap-group-2">
+                <div class="rectangle-10"></div>
+                <div class="text-wrapper-22">ADD TO CART</div>
+                <img class="shopping-cart" src="img/shopping-cart.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+</main>
+
+<footer>
+    
+</footer>
+
+<script src="/JS/index.js"></script>
+</body>
+</html>
