@@ -90,3 +90,13 @@ a:focus {
     background: white !important;
   }
 }
+        .cart-icon {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+        .heart-icon {
+            width: 20px;
+            height: 20px;
+            fill: #ef4444;
+        }

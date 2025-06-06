@@ -3,226 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Book Store</title>
+    <title>Bookstore Buttons</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :host {
-            display: contents;
+        .cart-icon {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+        .heart-icon {
+            width: 20px;
+            height: 20px;
+            fill: #ef4444;
         }
     </style>
 </head>
-<body>
-    <div class="overflow-hidden pb-2 bg-orange-50">
-        <div class="flex flex-col items-center px-20 w-full max-md:px-5 max-md:max-w-full">
-            <div class="z-10 w-full text-base font-bold text-black bg-orange-200 max-w-[1239px] max-md:max-w-full">
-                <div class="flex overflow-hidden flex-wrap gap-5 justify-between items-start px-px pt-6 pb-1 w-full bg-white bg-opacity-70 max-md:max-w-full">
-                    <div class="flex gap-9 self-end mt-6">
-                        <div class="underline">Home</div>
-                        <div>Store</div>
-                        <div>About Us</div>
-                    </div>
-                    <div class="flex text-2xl">
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4b9b37253c204f6f857df942d330cc444589a9ab?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain shrink-0 aspect-[2.2] w-[88px]" />
-                        <div class="self-start mt-4 basis-auto">Best Book Store</div>
-                    </div>
-                    <div class="flex gap-7 mt-2.5 leading-none text-center text-black whitespace-nowrap">
-                        <div class="flex gap-8 py-1.5 pr-3.5 pl-9 rounded-2xl border border-black border-solid bg-orange-50 bg-opacity-60 max-md:pl-5">
-                            <div>Search</div>
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1a6f8b38705b84c2fcff34522d50dcee232cd5cc?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain shrink-0 w-4 aspect-[0.76]" />
-                        </div>
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f2a72f4b2274ec07526a60f537ff03c70ad086d2?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain shrink-0 aspect-square w-[30px]" />
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c8f06282bc38d1d11f55a510cdb247365d8b2aa?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain shrink-0 aspect-square w-[30px]" />
-                    </div>
-                </div>
-            </div>
-            <div class="flex relative flex-col items-center px-20 pt-20 pb-80 max-w-full text-5xl font-bold text-white min-h-[731px] w-[1237px] max-md:px-5 max-md:pb-24 max-md:text-4xl">
-                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dd13710d2737f3e019a6cbe5c3b7a259dd48ed83?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-cover absolute inset-0 size-full" />
-                <div class="flex relative flex-col items-center mb-0 ml-6 max-w-full w-[700px] max-md:mb-2.5 max-md:text-4xl">
-                    <div class="leading-snug max-md:text-4xl">Read more</div>
-                    <div class="flex flex-wrap gap-10 self-stretch mt-12 leading-snug max-md:mt-10 max-md:max-w-full max-md:text-4xl">
-                        <div class="grow shrink w-[210px] max-md:text-4xl">learn more</div>
-                        <div class="grow shrink w-[280px] max-md:text-4xl">become more</div>
-                    </div>
-                    <div class="px-16 py-5 mt-36 max-w-full text-xl rounded-3xl bg-sky-400 bg-opacity-80 w-[248px] max-md:px-5 max-md:mt-10">Read Now</div>
-                </div>
-            </div>
-            <div class="flex flex-wrap gap-5 justify-between items-start mt-72 w-full text-black max-w-[1211px] max-md:mt-10 max-md:max-w-full">
-                <div class="text-4xl">Book</div>
-                <div class="mt-5 text-2xl">See all</div>
-            </div>
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/40a2b9ee026b4218aa82fb74db7eb73f9f60e963?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain mt-4 w-full aspect-[3.1] max-w-[1243px] max-md:max-w-full" />
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a21a59244e2c2f21cf4fa81666cf994ed7175605?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain mt-16 w-full aspect-[3.1] max-w-[1243px] max-md:mt-10 max-md:max-w-full" />
-            <div class="self-start mt-72 ml-5 text-4xl text-black max-md:mt-10 max-md:ml-2.5">Our Popular Book</div>
-            <div class="mt-28 w-full max-w-[1223px] max-md:mt-10 max-md:max-w-full">
-                <div class="flex gap-5 max-md:flex-col max-md:">
-                    <div class="w-[33%] max-md:ml-0 max-md:w-full">
-                        <div class="flex flex-col px-14 py-8 mx-auto w-full text-xs text-black bg-orange-200 rounded-2xl max-md:px-5 max-md:mt-10">
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1d12c9075efbeea4f78cbdd246e1ccc849ae23d3?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain rounded-2xl aspect-[0.78] w-[206px]" />
-                            <div class="self-start mt-6 text-xl">Name</div>
-                            <div class="self-start mt-2.5 text-black">Description</div>
-                            <div class="flex gap-5 justify-between mt-6">
-                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/059479abac3c964eebe21f7f0ad8134fca989317?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain shrink-0 self-start w-16 aspect-[4.57]" />
-                                <div>4 Star</div>
-                            </div>
-                            <div class="shrink-0 mt-1.5 h-px border border-black border-solid w-[206px]"></div>
-                            <div class="self-end px-2.5 py-1 mt-4 text-xs whitespace-nowrap rounded-md border border-black border-solid bg-orange-200 bg-opacity-0 w-[57px]">Available</div>
-                        </div>
-                    </div>
-                    <div class="ml-5 w-[33%] max-md:ml-0 max-md:w-full">
-                        <div class="flex flex-col px-14 py-7 mx-auto w-full text-xs text-black bg-orange-200 rounded-2xl max-md:px-5 max-md:mt-10">
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ba6194a90b056059f12fc330457da115fa2b20b3?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain rounded-2xl aspect-[0.78] w-[206px]" />
-                            <div class="self-start mt-7 text-xl">Name</div>
-                            <div class="self-start mt-2.5 text-black">Description</div>
-                            <div class="flex gap-5 justify-between mt-6">
-                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/059479abac3c964eebe21f7f0ad8134fca989317?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain shrink-0 self-start w-16 aspect-[4.57]" />
-                                <div>4 Star</div>
-                            </div>
-                            <div class="shrink-0 mt-1.5 h-px border border-black border-solid w-[206px]"></div>
-                            <div class="self-end px-2.5 py-1 mt-4 text-xs whitespace-nowrap rounded-md border border-black border-solid bg-orange-200 bg-opacity-0 w-[57px]">Available</div>
-                        </div>
-                    </div>
-                    <div class="ml-5 w-[33%] max-md:ml-0 max-md:w-full">
-                        <div class="flex flex-col px-14 py-7 mx-auto w-full text-xs text-black bg-orange-200 rounded-2xl max-md:px-5 max-md:mt-10">
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9d6134aa524276e0845fc054966d4a88f86c76e9?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain rounded-2xl aspect-[0.78] w-[206px]" />
-                            <div class="self-start mt-7 text-xl">Name</div>
-                            <div class="self-start mt-2.5 text-black">Description</div>
-                            <div class="flex gap-5 justify-between mt-6">
-                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/059479abac3c964eebe21f7f0ad8134fca989317?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain shrink-0 self-start w-16 aspect-[4.57]" />
-                                <div>4 Star</div>
-                            </div>
-                            <div class="shrink-0 mt-1.5 h-px border border-black border-solid w-[206px]"></div>
-                            <div class="self-end px-2.5 py-1 mt-4 text-xs whitespace-nowrap rounded-md border border-black border-solid bg-orange-200 bg-opacity-0 w-[57px]">Available</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-52 text-5xl text-black max-md:mt-10 max-md:max-w-full max-md:text-4xl">Our best Selling Book</div>
-            <div class="mt-28 w-full max-w-[1223px] max-md:mt-10 max-md:max-w-full">
-                <div class="flex gap-5 max-md:flex-col max-md:">
-                    <div class="w-[33%] max-md:ml-0 max-md:w-full">
-                        <div class="flex flex-col px-14 py-7 mx-auto w-full text-xs text-black bg-orange-200 rounded-2xl max-md:px-5 max-md:mt-10">
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2cdb09772e17174b89fa98c39a881c50efddb38e?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain rounded-2xl aspect-[0.78] w-[206px]" />
-                            <div class="self-start mt-7 text-xl">Name</div>
-                            <div class="self-start mt-2.5 text-black">Description</div>
-                            <div class="flex gap-5 justify-between mt-6">
-                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/059479abac3c964eebe21f7f0ad8134fca989317?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain shrink-0 self-start w-16 aspect-[4.57]" />
-                                <div>4 Star</div>
-                            </div>
-                            <div class="shrink-0 mt-1.5 h-px border border-black border-solid w-[206px]"></div>
-                            <div class="self-end px-2.5 py-1 mt-4 text-xs whitespace-nowrap rounded-md border border-black border-solid bg-orange-200 bg-opacity-0 w-[57px]">Available</div>
-                        </div>
-                    </div>
-                    <div class="ml-5 w-[33%] max-md:ml-0 max-md:w-full">
-                        <div class="flex flex-col px-14 py-7 mx-auto w-full text-xs text-black bg-orange-200 rounded-2xl max-md:px-5 max-md:mt-10">
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/efc2453d966b1ac96a70e1252821aea888720db9?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain rounded-2xl aspect-[0.78] w-[206px]" />
-                            <div class="self-start mt-7 text-xl">Name</div>
-                            <div class="self-start mt-2.5 text-black">Description</div>
-                            <div class="flex gap-5 justify-between mt-6">
-                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/059479abac3c964eebe21f7f0ad8134fca989317?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain shrink-0 self-start w-16 aspect-[4.57]" />
-                                <div>4 Star</div>
-                            </div>
-                            <div class="shrink-0 mt-1.5 h-px border border-black border-solid w-[206px]"></div>
-                            <div class="self-end px-2.5 py-1 mt-4 text-xs whitespace-nowrap rounded-md border border-black border-solid bg-orange-200 bg-opacity-0 w-[57px]">Available</div>
-                        </div>
-                    </div>
-                    <div class="ml-5 w-[33%] max-md:ml-0 max-md:w-full">
-                        <div class="flex flex-col px-14 py-7 mx-auto w-full text-xs text-black bg-orange-200 rounded-2xl max-md:px-5 max-md:mt-10">
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/678eaf462f4fe73299050e4c53f89adae3890d92?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain rounded-2xl aspect-[0.78] w-[206px]" />
-                            <div class="self-start mt-7 text-xl">Name</div>
-                            <div class="self-start mt-2.5 text-black">Description</div>
-                            <div class="flex gap-5 justify-between mt-6">
-                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/059479abac3c964eebe21f7f0ad8134fca989317?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain shrink-0 self-start w-16 aspect-[4.57]" />
-                                <div>4 Star</div>
-                            </div>
-                            <div class="shrink-0 mt-1.5 h-px border border-black border-solid w-[206px]"></div>
-                            <div class="self-end px-2.5 py-1 mt-4 text-xs whitespace-nowrap rounded-md border border-black border-solid bg-orange-200 bg-opacity-0 w-[57px]">Available</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<body class="bg-gray-50 p-8">
+    <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-sm">
+        <!-- Buttons Container -->
+        <div class="flex flex-col md:flex-row gap-4 mb-6">
+            <!-- Add to Cart Button -->
+            <button class="flex items-center justify-center gap-3 w-full md:w-64 h-16 bg-red-500 hover:bg-red-600 text-white font-medium rounded-full transition-colors duration-200">
+                <svg class="cart-icon" viewBox="0 0 24 24">
+                    <path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                </svg>
+                ADD TO CART
+            </button>
+            
+            <!-- Add to Wishlist Button -->
+            <button class="flex items-center justify-center gap-3 w-full md:w-64 h-16 bg-white hover:bg-gray-50 text-black font-medium rounded-full border-2 border-gray-300 transition-colors duration-200">
+                <svg class="heart-icon" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                ADD TO WISHLIST
+            </button>
         </div>
-        <div class="px-12 pt-28 pb-7 mt-44 w-full bg-orange-200 max-md:px-5 max-md:pt-24 max-md:mt-10 max-md:max-w-full">
-            <div class="flex gap-5 max-md:flex-col max-md:">
-                <div class="w-[67%] max-md:ml-0 max-md:w-full">
-                    <div class="flex flex-col w-full max-md:mt-10 max-md:max-w-full">
-                        <div class="max-md:max-w-full">
-                            <div class="flex gap-5 max-md:flex-col max-md:">
-                                <div class="w-[39%] max-md:ml-0 max-md:w-full">
-                                    <div class="flex flex-col w-full font-bold max-md:mt-10">
-                                        <div class="flex self-start text-2xl text-black">
-                                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4b9b37253c204f6f857df942d330cc444589a9ab?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain shrink-0 aspect-[2.2] w-[88px]" />
-                                            <div class="self-start mt-3 basis-auto">Best Book Store</div>
-                                        </div>
-                                        <div class="self-end mt-8 text-base text-black w-[253px]">
-                                            Read. Learn. Grow.
-                                            <br />
-                                            Providing quality books and friendly service since 2005.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ml-5 w-[33%] max-md:ml-0 max-md:w-full">
-                                    <div class="flex flex-col grow items-start mt-3 text-base font-bold text-black max-md:mt-10">
-                                        <div class="text-2xl text-black">Contact Us</div>
-                                        <div class="self-stretch mt-8">Email: BestBookStore@gmail.com</div>
-                                        <div class="mt-5">Phone number: 0123456</div>
-                                    </div>
-                                </div>
-                                <div class="ml-5 w-[27%] max-md:ml-0 max-md:w-full">
-                                    <div class="flex flex-col mt-3 text-xl font-semibold leading-snug text-black max-md:mt-10">
-                                        <div class="self-center">Follow Us</div>
-                                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/60f6cb5a32e85004a72ce7a8a4008b0400fd6a75?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain mt-1.5 aspect-[5] w-[205px]" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex gap-1 self-end mt-56 mr-24 text-xs leading-snug text-black max-md:mt-10 max-md:mr-2.5">
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6d59b69f4a44b1259354e3619b9ea0bd84352b1c?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain shrink-0 my-auto w-3 aspect-square" />
-                            <div class="basis-auto">Bedimcode. All rights reserved</div>
-                        </div>
+        
+        <!-- Rating Section -->
+        <div class="bg-yellow-100 p-4 rounded-lg flex items-center gap-4">
+            <!-- Left side - Reviews -->
+            <div class="flex flex-col items-center min-w-fit">
+                <div class="flex items-center gap-1 mb-1">
+                    <div class="flex text-red-500">
+                        <span class="text-lg">★ ★ ★ ★</span>
+                        <span class="text-gray-400 text-lg">★</span>
                     </div>
+                    <span class="text-gray-600 font-medium ml-1">4/5</span>
                 </div>
-                <div class="ml-5 w-[33%] max-md:ml-0 max-md:w-full">
-                    <div class="flex flex-col mt-3 text-2xl font-bold text-black whitespace-nowrap max-md:mt-10 max-md:max-w-full">
-                        <div class="self-center">Location</div>
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/88cd493e9194f81272e008c9759dde9b7b9b855a?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain mt-2.5 w-full aspect-[1.38] max-md:max-w-full" />
-                    </div>
-                </div>
+                <div class="text-sm text-gray-600">21,000+ Reviews</div>
+            </div>
+            
+            <!-- Right side - Text -->
+            <div class="text-sm flex-1">
+                <span class="text-gray-700">Bookshop.org has the </span>
+                <span class="font-semibold">highest-rated customer service</span>
+                <span class="text-gray-700"> of any bookstore in the world</span>
             </div>
         </div>
     </div>
-
-    <script>
-        // Add any interactive functionality here if needed
-        document.addEventListener('DOMContentLoaded', function() {
-            // Example: Add click handlers for navigation items
-            const navItems = document.querySelectorAll('.flex.gap-9 > div');
-            navItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    // Remove underline from all items
-                    navItems.forEach(nav => nav.classList.remove('underline'));
-                    // Add underline to clicked item
-                    this.classList.add('underline');
-                });
-            });
-
-            // Example: Add click handler for "Read Now" button
-            const readNowBtn = document.querySelector('.bg-sky-400');
-            if (readNowBtn) {
-                readNowBtn.addEventListener('click', function() {
-                    console.log('Read Now clicked');
-                    // Add your functionality here
-                });
-            }
-
-            // Example: Add search functionality
-            const searchContainer = document.querySelector('.rounded-2xl.border.border-black');
-            if (searchContainer) {
-                searchContainer.addEventListener('click', function() {
-                    console.log('Search clicked');
-                    // Add search functionality here
-                });
-            }
-        });
-    </script>
 </body>
 </html>
