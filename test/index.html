@@ -63,3 +63,177 @@
     </div>
 </body>
 </html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Sellers Section</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+</head>
+<body>
+    <div class="bg-[#FBF3E6] p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Best Sellers of the Week</h2>
+        <div class="bg-[#F7DCA9] p-4 rounded-lg relative">
+            <!-- Left Arrow -->
+            <button id="scroll-left" class="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white hover:bg-gray-100 rounded-full p-2 shadow-lg transition-all duration-200">
+                <i class="fas fa-chevron-left text-gray-600"></i>
+            </button>
+            
+            <!-- Right Arrow -->
+            <button id="scroll-right" class="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-white hover:bg-gray-100 rounded-full p-2 shadow-lg transition-all duration-200">
+                <i class="fas fa-chevron-right text-gray-600"></i>
+            </button>
+            
+            <div id="bestsellers-container" class="flex overflow-x-auto space-x-4 pb-4 scroll-smooth" style="scrollbar-width: none; -ms-overflow-style: none;">
+                <style>
+                    #bestsellers-container::-webkit-scrollbar {
+                        display: none;
+                    }
+                </style>
+                <div class="flex-shrink-0 w-32">
+                    <div class="rounded-lg h-44 flex items-center justify-center text-white mb-2 overflow-hidden">
+                        <img src="/PHOTO/15That's a Great Question, I'd Love to Tell You.webp" alt="Adventure Peak" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-sm font-medium text-gray-900 truncate">Adventure Peak</h4>
+                </div>
+                
+                <div class="flex-shrink-0 w-32">
+                    <div class="bg-gradient-to-br from-orange-500 to-red-600 rounded-lg h-44 flex items-center justify-center text-white mb-2">
+                        <i class="fas fa-fire text-3xl"></i>
+                    </div>
+                    <h4 class="text-sm font-medium text-gray-900 truncate">Burning Secrets</h4>
+                </div>
+                
+                <div class="flex-shrink-0 w-32">
+                    <div class="bg-gradient-to-br from-pink-500 to-purple-600 rounded-lg h-44 flex items-center justify-center text-white mb-2">
+                        <i class="fas fa-heart text-3xl"></i>
+                    </div>
+                    <h4 class="text-sm font-medium text-gray-900 truncate">Love Stories</h4>
+                </div>
+                
+                <div class="flex-shrink-0 w-32">
+                    <div class="bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg h-44 flex items-center justify-center text-white mb-2">
+                        <i class="fas fa-leaf text-3xl"></i>
+                    </div>
+                    <h4 class="text-sm font-medium text-gray-900 truncate">Nature's Call</h4>
+                </div>
+                
+                <div class="flex-shrink-0 w-32">
+                    <div class="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-lg h-44 flex items-center justify-center text-white mb-2">
+                        <i class="fas fa-star text-3xl"></i>
+                    </div>
+                    <h4 class="text-sm font-medium text-gray-900 truncate">Cosmic Dreams</h4>
+                </div>
+                
+                <div class="flex-shrink-0 w-32">
+                    <div class="bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg h-44 flex items-center justify-center text-white mb-2">
+                        <i class="fas fa-wave-square text-3xl"></i>
+                    </div>
+                    <h4 class="text-sm font-medium text-gray-900 truncate">Ocean Tales</h4>
+                </div>
+                
+                <div class="flex-shrink-0 w-32">
+                    <div class="bg-gradient-to-br from-yellow-500 to-orange-600 rounded-lg h-44 flex items-center justify-center text-white mb-2">
+                        <i class="fas fa-sun text-3xl"></i>
+                    </div>
+                    <h4 class="text-sm font-medium text-gray-900 truncate">Golden Hours</h4>
+                </div>
+                
+                <div class="flex-shrink-0 w-32">
+                    <div class="bg-gradient-to-br from-red-500 to-pink-600 rounded-lg h-44 flex items-center justify-center text-white mb-2">
+                        <i class="fas fa-rose text-3xl"></i>
+                    </div>
+                    <h4 class="text-sm font-medium text-gray-900 truncate">Romantic Journey</h4>
+                </div>
+                
+                <div class="flex-shrink-0 w-32">
+                    <div class="bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg h-44 flex items-center justify-center text-white mb-2">
+                        <i class="fas fa-moon text-3xl"></i>
+                    </div>
+                    <h4 class="text-sm font-medium text-gray-900 truncate">Night Stories</h4>
+                </div>
+                
+                <div class="flex-shrink-0 w-32">
+                    <div class="bg-gradient-to-br from-teal-500 to-green-600 rounded-lg h-44 flex items-center justify-center text-white mb-2">
+                        <i class="fas fa-tree text-3xl"></i>
+                    </div>
+                    <h4 class="text-sm font-medium text-gray-900 truncate">Forest Mysteries</h4>
+                </div>
+                <div class="flex-shrink-0 w-32">
+                    <div class="bg-gradient-to-br from-teal-500 to-green-600 rounded-lg h-44 flex items-center justify-center text-white mb-2">
+                        <i class="fas fa-tree text-3xl"></i>
+                    </div>
+                    <h4 class="text-sm font-medium text-gray-900 truncate">Forest Mysteries</h4>
+                </div>
+                <div class="flex-shrink-0 w-32">
+                    <div class="bg-gradient-to-br from-teal-500 to-green-600 rounded-lg h-44 flex items-center justify-center text-white mb-2">
+                        <i class="fas fa-tree text-3xl"></i>
+                    </div>
+                    <h4 class="text-sm font-medium text-gray-900 truncate">Forest Mysteries</h4>
+                </div>
+                <div class="flex-shrink-0 w-32">
+                    <div class="bg-gradient-to-br from-teal-500 to-green-600 rounded-lg h-44 flex items-center justify-center text-white mb-2">
+                        <i class="fas fa-tree text-3xl"></i>
+                    </div>
+                    <h4 class="text-sm font-medium text-gray-900 truncate">Forest Mysteries</h4>
+                </div>
+                <div class="flex-shrink-0 w-32">
+                    <div class="bg-gradient-to-br from-teal-500 to-green-600 rounded-lg h-44 flex items-center justify-center text-white mb-2">
+                        <i class="fas fa-tree text-3xl"></i>
+                    </div>
+                    <h4 class="text-sm font-medium text-gray-900 truncate">Forest Mysteries</h4>
+                </div>
+                <div class="flex-shrink-0 w-32">
+                    <div class="bg-gradient-to-br from-teal-500 to-green-600 rounded-lg h-44 flex items-center justify-center text-white mb-2">
+                        <i class="fas fa-tree text-3xl"></i>
+                    </div>
+                    <h4 class="text-sm font-medium text-gray-900 truncate">Forest Mysteries</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const container = document.getElementById('bestsellers-container');
+        const leftBtn = document.getElementById('scroll-left');
+        const rightBtn = document.getElementById('scroll-right');
+        
+        // Scroll amount (width of one book + gap)
+        const scrollAmount = 144; // 128px (w-32) + 16px (space-x-4)
+        
+        leftBtn.addEventListener('click', () => {
+            container.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+        
+        rightBtn.addEventListener('click', () => {
+            container.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Show/hide arrows based on scroll position
+        function updateArrows() {
+            const isAtStart = container.scrollLeft <= 0;
+            const isAtEnd = container.scrollLeft >= container.scrollWidth - container.clientWidth;
+            
+            leftBtn.style.opacity = isAtStart ? '0.5' : '1';
+            rightBtn.style.opacity = isAtEnd ? '0.5' : '1';
+            leftBtn.style.pointerEvents = isAtStart ? 'none' : 'auto';
+            rightBtn.style.pointerEvents = isAtEnd ? 'none' : 'auto';
+        }
+        
+        container.addEventListener('scroll', updateArrows);
+        updateArrows(); // Initial check
+    </script>
+</body>
+</html>
