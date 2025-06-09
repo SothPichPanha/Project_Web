@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Best Book Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<style>
+    a {
+        text-decoration: none;
+    }
+</style>
+<body class="mx-8 sm:mx-10 bg-[#FBF3E6]">
+    <!-- Header -->
+    <header class="sticky top-0 my-10 bg-[#FBF3E6] z-50">
+    <div class="flex justify-between my-4 sm:items-center">
+        <!-- Hamburger Menu -->
+        <button id="menu-button" id="mobile-menu" class="sm:w-8 sm:h-8 sm:rounded-full sm:flex items-center sm:justify-center md:hidden">
+            <img src="/PHOTO/Menu.png" alt="">
+        </button>
+
+        <!-- Navigation (Desktop) -->
+        <div id="home" class="hidden md:flex md:flex-col md:font-bold md:text-[20px] md:py-4 md:gap-4">
+            <nav>
+                <ul class="md:flex md:flex-row md:gap-4 md:items-center md:justify-center">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Logo -->
+        <div id="logo" class="flex items-center w-fit">
+            <img src="/PHOTO/Logo.png" alt="" class="sm:h-10 sm:w-25 h-8 w-15">
+            <h2 class="sm:py-4 font-bold sm:text-[20px] text-[15px]">Best Book Store</h2>
+        </div>
+
+        <!-- Cart & Profile -->
+        <div class="w-fit sm:flex sm:items-center sm:gap-2 sm:my-2">
+            <div class="flex items-center gap-4">
+                <!-- Search Bar (Desktop) -->
+                <div class="hidden md:flex items-center bg-white rounded-full border border-gray-300 px-4 py-2 w-48">
+                    <input type="text" placeholder="Search" class="flex-1 outline-none text-sm bg-transparent">
+                    <img src="/PHOTO/search_icon.png" alt="">
+                </div>
+
+                <!-- Search Icon (Mobile) -->
+                <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center md:hidden">
+                    <img src="/PHOTO/search.png" class="" alt="">
+                </button>
+
+                <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center">
+                    <img src="/PHOTO/Shopping Cart.png" alt="">
+                </button>
+
+                <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center">
+                    <img src="/PHOTO/Customer.png" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" id="menu-button" class="sm:hidden md:hidden hidden absolute top-full left-0 w-full bg-[#FBF3E6] z-50 p-4 space-y-4 shadow-md sm:absolute sm:top-full sm:left-0 sm:w-full sm:bg-[#FBF3E6] sm:z-50 sm:p-4 sm:space-y-4 sm:shadow-md">
+        <a href="index.html" class="block text-lg hover:text-gray-500 transition-all">Home</a>
+        <a href="services.html" class="block text-lg hover:text-gray-500 transition-all">Services</a>
+        <a href="about.html" class="block text-lg hover:text-gray-500 transition-all">About Us</a>
+        <a href="#contact" class="block text-lg hover:text-gray-500 transition-all">Contact</a>
+    </div>
+</header>
+
+    <!-- Main Content -->
+    <div class="">
+        <h2 class="text-2xl font-light text-center text-gray-800 mb-8 lg:mb-12 md:text-[80px] md:flex md:justify-center">Shopping Card</h2>
+        
+        <!-- Cart Items Container -->
+        <div class=" rounded-lg shadow-sm overflow-hidden mb-8">
+            <!-- Desktop Table Header -->
+            <div class="hidden lg:flex items-center  px-10 py-4 border-b border-gray-200">
+                <div class="w-32 text-gray-600 font-medium">Item</div>
+                <div class="flex-1 ml-6 text-gray-600 font-medium">Details</div>
+                <div class="w-24 text-center text-gray-600 font-medium">Qty</div>
+                <div class="w-24 text-center text-gray-600 font-medium">Price</div>
+                <div class="w-16 text-center text-gray-600 font-medium">Action</div>
+            </div>
+
+            <!-- Cart Items -->
+            <div id="cart-items">
+                <!-- Items will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Total Section -->
+        <div class=" rounded-lg shadow-sm p-6 lg:p-8">
+            <div class="flex justify-between items-center mb-6 lg:mb-8 px-4">
+                <span class="text-xl lg:text-2xl font-medium text-gray-800">Total: <span id="total-quantity">7</span></span>
+                <span class="text-xl lg:text-2xl font-medium text-gray-800">$<span id="total-price">62.93</span></span>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button id="reset-btn" class="bg-pink-300 hover:bg-pink-400 text-gray-800 font-medium rounded-xl px-6 py-2 lg:px-8 lg:py-3 text-base lg:text-lg transition-colors">
+                    Reset
+                </button>
+                <button id="buy-btn" class="bg-pink-400 hover:bg-pink-500 text-gray-800 font-medium rounded-xl px-6 py-2 lg:px-8 lg:py-3 text-base lg:text-lg transition-colors">
+                    Buy
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cart data
+        let cartItems = [];
+        
+        // Different book cover images
+       const bookImages = [
+    "/PHOTO/1My Heavenly Favorite.webp",
+    "/PHOTO/2That's All I Know.jpg",
+    "/PHOTO/3Another Book Cover.jpg",
+    "/PHOTO/4Book Title Example.webp",
+    "/PHOTO/5New Book Cover.png",
+    "/PHOTO/6Interesting Read.jpg",
+    "/PHOTO/7Final Book Image.webp"
+];
+
+        
+        // Initialize cart with 7 different items
+        function initializeCart() {
+            for (let i = 1; i <= 7; i++) {
+                cartItems.push({
+                    id: i,
+                    title: "My Heavenly Favourite",
+                    type: "A Novel",
+                    author: "Laura Barnett",
+                    price: 8.99,
+                    quantity: 1,
+                    image: bookImages[i - 1] // Use different image for each book
+                });
+            }
+            renderCart();
+            updateTotals();
+        }
+        
+        // Render cart items
+        function renderCart() {
+            const cartContainer = document.getElementById('cart-items');
+            cartContainer.innerHTML = '';
+            
+            cartItems.forEach((item) => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'border-b border-gray-100 last:border-b-0';
+                
+                itemElement.innerHTML = `
+                    <!-- Mobile Layout -->
+                    <div class="lg:hidden p-4 hover:bg-gray-50">
+                        <div class="flex items-start gap-4 mb-4">
+                            <img src="${item.image}" alt="${item.title}" class="w-16 h-20 object-cover rounded shadow-sm flex-shrink-0">
+                            <div class="flex-1 min-w-0">
+                                <h3 class="font-medium text-gray-800 text-base mb-1">${item.title}</h3>
+                                <p class="text-sm text-gray-600 mb-1">${item.type}</p>
+                                <p class="text-sm">
+                                    <a href="#" class="text-blue-600 underline hover:text-blue-800">${item.author}</a>
+                                    <span class="text-gray-600"> (Author)</span>
+                                </p>
+                            </div>
+                            <button onclick="removeItem(${item.id})" class="text-red-500 hover:text-red-700 p-2 flex-shrink-0">
+                                <i class="fas fa-trash text-lg"></i>
+                            </button>
+                        </div>
+                        <div class="flex justify-between items-center pt-2">
+                            <div class="flex items-center gap-2">
+                                <label class="text-sm text-gray-600 font-medium">Qty:</label>
+                                <input type="number" min="1" value="${item.quantity}" 
+                                       onchange="updateQuantity(${item.id}, this.value)"
+                                       class="w-12 text-center px-2 py-1 border border-gray-300 rounded focus:outline-none focus:border-orange-500">
+                            </div>
+                            <div class="text-lg font-medium text-gray-800">$${item.price.toFixed(2)}</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Desktop Layout -->
+                    <div class="hidden lg:flex items-center px-8 py-6 hover:bg-gray-50">
+                        <div class="w-32 flex-shrink-0">
+                            <img src="${item.image}" alt="${item.title}" class="w-[162px] h-[241px] object-cover rounded shadow-sm mx-auto">
+                        </div>
+                        <div class="flex-1 ml-6 md:mb-[178px]">
+                            <h3 class="font-medium text-gray-800 text-lg mb-1">${item.title}</h3>
+                            <p class="text-base text-gray-600 mb-1">${item.type}</p>
+                            <p class="text-base">
+                                <a href="#" class="text-blue-600  hover:text-blue-800">${item.author}</a>
+                                <span class="text-gray-600"> (Author)</span>
+                            </p>
+                        </div>
+                        <div class="w-24 text-center">
+                            <input type="number" min="1" value="${item.quantity}" 
+                                   onchange="updateQuantity(${item.id}, this.value)"
+                                   class="w-12 text-center px-2 py-2 border border-gray-300 rounded focus:outline-none focus:border-orange-500 text-base">
+                        </div>
+                        <div class="w-24 text-center">
+                            <span class="font-medium text-gray-800 text-lg">$${item.price.toFixed(2)}</span>
+                        </div>
+                        <div class="w-16 text-center">
+                            <button onclick="removeItem(${item.id})" class="text-red-500 hover:text-red-700 p-2">
+                                <i class="fas fa-trash text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                cartContainer.appendChild(itemElement);
+            });
+        }
+        
+        // Update item quantity
+        function updateQuantity(itemId, newQuantity) {
+            const quantity = parseInt(newQuantity);
+            if (quantity < 1) return;
+            
+            const item = cartItems.find(item => item.id === itemId);
+            if (item) {
+                item.quantity = quantity;
+                updateTotals();
+            }
+        }
+        
+        // Remove item from cart
+        function removeItem(itemId) {
+            cartItems = cartItems.filter(item => item.id !== itemId);
+            renderCart();
+            updateTotals();
+        }
+        
+        // Update totals
+        function updateTotals() {
+            const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+            const totalPrice = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+            document.getElementById('total-quantity').textContent = totalQuantity;
+            document.getElementById('total-price').textContent = totalPrice.toFixed(2);
+            if (document.getElementById('cart-badge')) {
+                document.getElementById('cart-badge').textContent = totalQuantity;
+            }
+        }
+        
+        // Initialize the cart when the page loads
+        initializeCart();
+    </script>
+</body>
+</html>
