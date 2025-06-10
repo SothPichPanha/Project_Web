@@ -3,50 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Notification Banner</title>
+    <title>Rent - Best Book Store</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f5f1eb;
+        }
+        .date-input::-webkit-calendar-picker-indicator {
+            opacity: 0;
+            position: absolute;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        .hamburger-line {
+            transition: all 0.3s ease;
+        }
+        .hamburger-active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger-active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+    </style>
 </head>
-<body class="bg-gray-100 p-4 md:p-8">
-    <!-- Stock Notification Banner -->
-<div class="max-w-4xl mx-auto">
-        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg shadow-sm">
-            <div class="px-4 py-3 md:px-6 md:py-4">
-                <div class="flex items-center justify-between flex-wrap gap-2">
-                    <!-- Text Content -->
-                    <div class="flex items-center gap-3 flex-1 min-w-0">
-                        <span class="text-gray-700 text-sm md:text-base font-medium whitespace-nowrap">
-                            This title will be in stock on:
-                        </span>
-                        
-                        <!-- Calendar Icon -->
-                        <div class="flex items-center gap-2">
-                            <svg class="w-4 h-4 md:w-5 md:h-5 text-gray-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
-                            </svg>
-                            
-                            <!-- Date -->
-                            <span class="text-gray-800 text-sm md:text-base font-semibold whitespace-nowrap">
-                                OCT 5, 2025
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <!-- Optional Action Button (for desktop) -->
-                    <button class="hidden md:inline-flex items-center px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-md transition-colors duration-200">
-                        Notify Me
-                    </button>
+<body class="mx-8 sm:mx-10 bg-[#FBF3E6]">
+    <!-- Navigation Bar -->
+<header class="sticky top-0 my-10 bg-[#FBF3E6] z-50">
+    <div class="flex justify-between my-4 sm:items-center">
+        <!-- Hamburger Menu -->
+        <button id="menu-button" id="mobile-menu" class="sm:w-8 sm:h-8 sm:rounded-full sm:flex items-center sm:justify-center md:hidden">
+            <img src="/PHOTO/Menu.png" alt="">
+        </button>
+
+        <!-- Navigation (Desktop) -->
+        <div id="home" class="hidden md:flex md:flex-col md:font-bold md:text-[20px] md:py-4 md:gap-4">
+            <nav>
+                <ul class="md:flex md:flex-row md:gap-4 md:items-center md:justify-center">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Logo -->
+        <div id="logo" class="flex items-center w-fit">
+            <img src="/PHOTO/Logo.png" alt="" class="sm:h-10 sm:w-25 h-8 w-15">
+            <h2 class="sm:py-4 font-bold sm:text-[20px] text-[15px]">Best Book Store</h2>
+        </div>
+
+        <!-- Cart & Profile -->
+        <div class="w-fit sm:flex sm:items-center sm:gap-2 sm:my-2">
+            <div class="flex items-center gap-4">
+                <!-- Search Bar (Desktop) -->
+                <div class="hidden md:flex items-center bg-white rounded-full border border-gray-300 px-4 py-2 w-48">
+                    <input type="text" placeholder="Search" class="flex-1 outline-none text-sm bg-transparent">
+                    <img src="/PHOTO/search_icon.png" alt="">
                 </div>
-                
-                <!-- Mobile Action Button -->
-                <div class="mt-3 md:hidden">
-                    <button class="w-full flex items-center justify-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-md transition-colors duration-200">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5-5-5h5v-12h4v12z"/>
-                        </svg>
-                        Notify Me When Available
-                    </button>
-                </div>
+
+                <!-- Search Icon (Mobile) -->
+                <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center md:hidden">
+                    <img src="/PHOTO/search.png" class="" alt="">
+                </button>
+
+                <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center">
+                    <img src="/PHOTO/Shopping Cart.png" alt="">
+                </button>
+
+                <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center">
+                    <img src="/PHOTO/Customer.png" alt="">
+                </button>
             </div>
         </div>
+    </div>
+                <button id="mobile-menu-button" class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 hidden">
+                    <span class="hamburger-line w-6 h-0.5 bg-gray-600 block"></span>
+                    <span class="hamburger-line w-6 h-0.5 bg-gray-600 block"></span>
+                    <span class="hamburger-line w-6 h-0.5 bg-gray-600 block"></span>
+                </button>
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" id="menu-button" class="sm:hidden md:hidden hidden absolute top-full left-0 w-full bg-[#FBF3E6] z-50 p-4 space-y-4 shadow-md sm:absolute sm:top-full sm:left-0 sm:w-full sm:bg-[#FBF3E6] sm:z-50 sm:p-4 sm:space-y-4 sm:shadow-md">
+        <a href="index.html" class="block text-lg hover:text-gray-500 transition-all">Home</a>
+        <a href="services.html" class="block text-lg hover:text-gray-500 transition-all">Services</a>
+        <a href="about.html" class="block text-lg hover:text-gray-500 transition-all">About Us</a>
+        <a href="#contact" class="block text-lg hover:text-gray-500 transition-all">Contact</a>
+    </div>
+</header>
+
+    <!-- Main Content -->
+    <main class="flex items-center justify-center min-h-screen px-4 py-8">
+        <!-- Rent Modal -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 w-full max-w-md relative">
+            <!-- Close Button -->
+            <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors duration-200">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            
+            <!-- Title -->
+            <h2 class="text-2xl font-semibold text-gray-800 mb-8 text-center">Rent</h2>
+            
+            <!-- Form -->
+            <form id="rent-form" class="space-y-6">
+                <!-- Start Date -->
+                <div class="space-y-2">
+                    <label for="start-date" class="block text-sm font-medium text-gray-700">Start</label>
+                    <div class="relative">
+                        <input 
+                            type="date" 
+                            id="start-date" 
+                            name="start-date"
+                            class="date-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors duration-200 pr-10"
+                            required
+                        >
+                        <i class="fas fa-calendar-alt absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+                    </div>
+                </div>
+                
+                <!-- End Date -->
+                <div class="space-y-2">
+                    <label for="end-date" class="block text-sm font-medium text-gray-700">End</label>
+                    <div class="relative">
+                        <input 
+                            type="date" 
+                            id="end-date" 
+                            name="end-date"
+                            class="date-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors duration-200 pr-10"
+                            required
+                        >
+                        <i class="fas fa-calendar-alt absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+                    </div>
+                </div>
+                
+                <!-- Error Message -->
+                <div id="error-message" class="hidden bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
+                </div>
+                
+                <!-- Rent Button -->
+                <button 
+                    type="submit" 
+                    class="w-full bg-amber-300 hover:bg-amber-400 text-gray-800 font-medium py-3 px-6 rounded-lg transition-colors duration-200 focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+                >
+                    Rent now
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuButton.classList.toggle('hamburger-active');
+        });
+
+        // Form handling
+        const rentForm = document.getElementById('rent-form');
+        const startDateInput = document.getElementById('start-date');
+        const endDateInput = document.getElementById('end-date');
+        const errorMessage = document.getElementById('error-message');
+
+        // Set default dates (today and tomorrow)
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+
+        startDateInput.value = today.toISOString().split('T')[0];
+        endDateInput.value = tomorrow.toISOString().split('T')[0];
+
+        // Set minimum dates
+        startDateInput.min = today.toISOString().split('T')[0];
+        endDateInput.min = today.toISOString().split('T')[0];
+
+        // Update end date minimum when start date changes
+        startDateInput.addEventListener('change', () => {
+            const startDate = new Date(startDateInput.value);
+            const nextDay = new Date(startDate);
+            nextDay.setDate(nextDay.getDate() + 1);
+            
+            endDateInput.min = nextDay.toISOString().split('T')[0];
+            
+            // If end date is before new minimum, update it
+            if (endDateInput.value && new Date(endDateInput.value) <= startDate) {
+                endDateInput.value = nextDay.toISOString().split('T')[0];
+            }
+            
+            hideError();
+        });
+
+        // Hide error when end date changes
+        endDateInput.addEventListener('change', hideError);
+
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.classList.remove('hidden');
+        }
+
+        function hideError() {
+            errorMessage.classList.add('hidden');
+        }
+
+        function validateDates() {
+            const startDate = new Date(startDateInput.value);
+            const endDate = new Date(endDateInput.value);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            if (!startDateInput.value || !endDateInput.value) {
+                showError('Please select both start and end dates.');
+                return false;
+            }
+
+            if (startDate < today) {
+                showError('Start date cannot be in the past.');
+                return false;
+            }
+
+            if (endDate <= startDate) {
+                showError('End date must be after the start date.');
+                return false;
+            }
+
+            const daysDifference = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
+            if (daysDifference > 30) {
+                showError('Rental period cannot exceed 30 days.');
+                return false;
+            }
+
+            return true;
+        }
+
+        rentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            if (validateDates()) {
+                const startDate = startDateInput.value;
+                const endDate = endDateInput.value;
+                const daysDifference = Math.ceil((new Date(endDate) - new Date(startDate)) / (1000 * 60 * 60 * 24));
+                
+                // Success feedback
+                const successMessage = `Rental request submitted successfully!\nStart Date: ${new Date(startDate).toLocaleDateString()}\nEnd Date: ${new Date(endDate).toLocaleDateString()}\nDuration: ${daysDifference} day${daysDifference > 1 ? 's' : ''}`;
+                
+                // Optional: Reset form or redirect
+                // rentForm.reset();
+            }
+        });
+
+        // Close modal on outside click (for demonstration)
+        document.addEventListener('click', (e) => {
+            const modal = document.querySelector('.bg-white.rounded-2xl');
+            if (!modal.contains(e.target) && !e.target.closest('nav')) {
+                console.log('Modal background clicked - in a real app, this might close the modal');
+            }
+        });
+    </script>
 </body>
 </html>
