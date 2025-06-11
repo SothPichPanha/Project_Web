@@ -118,6 +118,7 @@
     <script>
         // Cart data
         let cartItems = [];
+        let selectedBookIds = []; // Track multiple selected books
         
         // Different book cover images
        const bookImages = [
@@ -148,29 +149,46 @@
             updateTotals();
         }
         
+        // Select/deselect book function
+        function selectBook(bookId) {
+            const index = selectedBookIds.indexOf(bookId);
+            if (index > -1) {
+                // Book is already selected, remove it (undo selection)
+                selectedBookIds.splice(index, 1);
+            } else {
+                // Book is not selected, add it
+                selectedBookIds.push(bookId);
+            }
+            renderCart(); // Re-render to update visual selection
+        }
+        
         // Render cart items
         function renderCart() {
             const cartContainer = document.getElementById('cart-items');
             cartContainer.innerHTML = '';
             
             cartItems.forEach((item) => {
+                const isSelected = selectedBookIds.includes(item.id);
                 const itemElement = document.createElement('div');
                 itemElement.className = 'border-b border-gray-100 last:border-b-0';
                 
                 itemElement.innerHTML = `
                     <!-- Mobile Layout -->
-                    <div class="lg:hidden p-4 hover:bg-gray-50">
+                    <div class="lg:hidden p-4 hover:bg-gray-50 cursor-pointer relative transition-all duration-300 ${isSelected ? 'bg-blue-50 border-2 border-blue-300 rounded-lg shadow-md' : ''}" onclick="selectBook(${item.id})">
+                        ${isSelected ? '<div class="absolute top-2 right-2 z-10"><i class="fas fa-check-circle text-blue-500 text-xl"></i></div>' : ''}
                         <div class="flex items-start gap-4 mb-4">
-                            <img src="${item.image}" alt="${item.title}" class="w-16 h-20 object-cover rounded shadow-sm flex-shrink-0">
+                            <div class="relative">
+                                <img src="${item.image}" alt="${item.title}" class="w-16 h-20 object-cover rounded shadow-sm flex-shrink-0 ${isSelected ? 'ring-2 ring-blue-400' : ''}">
+                            </div>
                             <div class="flex-1 min-w-0">
-                                <h3 class="font-medium text-gray-800 text-base mb-1">${item.title}</h3>
+                                <h3 class="font-medium text-gray-800 text-base mb-1 ${isSelected ? 'text-blue-800' : ''}">${item.title}</h3>
                                 <p class="text-sm text-gray-600 mb-1">${item.type}</p>
                                 <p class="text-sm">
                                     <a href="#" class="text-blue-600 underline hover:text-blue-800">${item.author}</a>
                                     <span class="text-gray-600"> (Author)</span>
                                 </p>
                             </div>
-                            <button onclick="removeItem(${item.id})" class="text-red-500 hover:text-red-700 p-2 flex-shrink-0">
+                            <button onclick="event.stopPropagation(); removeItem(${item.id})" class="text-red-500 hover:text-red-700 p-2 flex-shrink-0">
                                 <i class="fas fa-trash text-lg"></i>
                             </button>
                         </div>
@@ -178,7 +196,7 @@
                             <div class="flex items-center gap-2">
                                 <label class="text-sm text-gray-600 font-medium">Qty:</label>
                                 <input type="number" min="1" value="${item.quantity}" 
-                                       onchange="updateQuantity(${item.id}, this.value)"
+                                       onchange="updateQuantity(${item.id}, this.value)" onclick="event.stopPropagation()"
                                        class="w-12 text-center px-2 py-1 border border-gray-300 rounded focus:outline-none focus:border-orange-500">
                             </div>
                             <div class="text-lg font-medium text-gray-800">$${item.price.toFixed(2)}</div>
@@ -186,12 +204,13 @@
                     </div>
                     
                     <!-- Desktop Layout -->
-                    <div class="hidden lg:flex items-center px-8 py-6 hover:bg-gray-50">
+                    <div class="hidden lg:flex items-center px-8 py-6 hover:bg-gray-50 cursor-pointer relative transition-all duration-300 ${isSelected ? 'bg-blue-50 border-2 border-blue-300 rounded-lg shadow-md' : ''}" onclick="selectBook(${item.id})">
+                        ${isSelected ? '<div class="absolute top-4 right-4 z-10"><i class="fas fa-check-circle text-blue-500 text-2xl"></i></div>' : ''}
                         <div class="w-32 flex-shrink-0">
-                            <img src="${item.image}" alt="${item.title}" class="w-[162px] h-[241px] object-cover rounded shadow-sm mx-auto">
+                            <img src="${item.image}" alt="${item.title}" class="w-[162px] h-[241px] object-cover rounded shadow-sm mx-auto ${isSelected ? 'ring-2 ring-blue-400' : ''}">
                         </div>
                         <div class="flex-1 ml-6 md:mb-[178px]">
-                            <h3 class="font-medium text-gray-800 text-lg mb-1">${item.title}</h3>
+                            <h3 class="font-medium text-gray-800 text-lg mb-1 ${isSelected ? 'text-blue-800' : ''}">${item.title}</h3>
                             <p class="text-base text-gray-600 mb-1">${item.type}</p>
                             <p class="text-base">
                                 <a href="#" class="text-blue-600  hover:text-blue-800">${item.author}</a>
@@ -200,14 +219,14 @@
                         </div>
                         <div class="w-24 text-center">
                             <input type="number" min="1" value="${item.quantity}" 
-                                   onchange="updateQuantity(${item.id}, this.value)"
+                                   onchange="updateQuantity(${item.id}, this.value)" onclick="event.stopPropagation()"
                                    class="w-12 text-center px-2 py-2 border border-gray-300 rounded focus:outline-none focus:border-orange-500 text-base">
                         </div>
                         <div class="w-24 text-center">
                             <span class="font-medium text-gray-800 text-lg">$${item.price.toFixed(2)}</span>
                         </div>
                         <div class="w-16 text-center">
-                            <button onclick="removeItem(${item.id})" class="text-red-500 hover:text-red-700 p-2">
+                            <button onclick="event.stopPropagation(); removeItem(${item.id})" class="text-red-500 hover:text-red-700 p-2">
                                 <i class="fas fa-trash text-lg"></i>
                             </button>
                         </div>
@@ -233,6 +252,11 @@
         // Remove item from cart
         function removeItem(itemId) {
             cartItems = cartItems.filter(item => item.id !== itemId);
+            // Remove from selection if the item was selected
+            const index = selectedBookIds.indexOf(itemId);
+            if (index > -1) {
+                selectedBookIds.splice(index, 1);
+            }
             renderCart();
             updateTotals();
         }

@@ -30,6 +30,9 @@
         .hamburger-active .hamburger-line:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -6px);
         }
+        .modal-overlay {
+            backdrop-filter: blur(4px);
+        }
     </style>
 </head>
 <body class="mx-8 sm:mx-10 bg-[#FBF3E6]">
@@ -90,19 +93,19 @@
     <!-- Mobile Navigation Menu -->
     <div id="mobile-menu" id="menu-button" class="sm:hidden md:hidden hidden absolute top-full left-0 w-full bg-[#FBF3E6] z-50 p-4 space-y-4 shadow-md sm:absolute sm:top-full sm:left-0 sm:w-full sm:bg-[#FBF3E6] sm:z-50 sm:p-4 sm:space-y-4 sm:shadow-md">
         <a href="index.html" class="block text-lg hover:text-gray-500 transition-all">Home</a>
-        <a href="services.html" class="block text-lg hover:text-gray-500 transition-all">Services</a>
+        <a href="services.html" class="block text-lg hover:text-gray-500 transition-all">Store</a>
         <a href="about.html" class="block text-lg hover:text-gray-500 transition-all">About Us</a>
-        <a href="#contact" class="block text-lg hover:text-gray-500 transition-all">Contact</a>
+
     </div>
 </header>
 
     <!-- Main Content -->
-    <main class="flex items-center justify-center min-h-screen px-4 py-8">
+    <main class="flex items-center justify-center  px-4 py-8">
         <!-- Rent Modal -->
-        <div class="bg-white rounded-2xl shadow-lg p-8 w-full max-w-md relative">
+        <div class="bg-[#F7DCA9] rounded-2xl shadow-lg p-8 w-full max-w-md relative">
             <!-- Close Button -->
             <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors duration-200">
-                <i class="fas fa-times text-2xl"></i>
+                <a href="4Card.html"> <i class="fas fa-times text-2xl"></i></a>
             </button>
             
             <!-- Title -->
@@ -147,13 +150,38 @@
                 <!-- Rent Button -->
                 <button 
                     type="submit" 
-                    class="w-full bg-amber-300 hover:bg-amber-400 text-gray-800 font-medium py-3 px-6 rounded-lg transition-colors duration-200 focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+                    class="w-full bg-blue-500 hover:bg-blue-400 text-gray-800 font-medium py-3 px-6 rounded-lg transition-colors duration-200 focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
                 >
                     Rent now
                 </button>
             </form>
         </div>
     </main>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 z-50 hidden items-center justify-center modal-overlay bg-black bg-opacity-50">
+        <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-sm mx-4 relative animate-pulse">
+            <!-- Close Button -->
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors duration-200">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            
+            <!-- Success Icon -->
+            <div class="flex justify-center mb-6">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                    <i class="fas fa-check text-green-500 text-2xl"></i>
+                </div>
+            </div>
+            
+            <!-- Complete Text -->
+            <h3 class="text-xl font-semibold text-gray-800 text-center mb-4">Complete</h3>
+            
+            <!-- Success Message -->
+            <p id="success-message" class="text-gray-600 text-center text-sm leading-relaxed">
+                Your rental request has been submitted successfully!
+            </p>
+        </div>
+    </div>
 
     <script>
         // Mobile menu toggle
@@ -170,6 +198,9 @@
         const startDateInput = document.getElementById('start-date');
         const endDateInput = document.getElementById('end-date');
         const errorMessage = document.getElementById('error-message');
+        const successModal = document.getElementById('success-modal');
+        const closeModalButton = document.getElementById('close-modal');
+        const successMessage = document.getElementById('success-message');
 
         // Set default dates (today and tomorrow)
         const today = new Date();
@@ -241,6 +272,52 @@
             return true;
         }
 
+function showSuccessModal(startDate, endDate, duration, code) {
+    const message = 
+        `Start Date: ${new Date(startDate).toLocaleDateString()}<br>` +
+        `End Date: ${new Date(endDate).toLocaleDateString()}<br>` +
+        `Duration: ${duration} day${duration > 1 ? 's' : ''}<br>` +
+        `Rental Code: <strong>${code}</strong>`;
+    
+    successMessage.innerHTML = message;
+    successModal.classList.remove('hidden');
+    successModal.classList.add('flex');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+        function generateNumericCode(length = 6) {
+  let code = '';
+  for (let i = 0; i < length; i++) {
+    const digit = Math.floor(Math.random() * 10); // random digit from 0-9
+    code += digit;
+  }
+  return code;
+}
+
+const myCode = generateNumericCode();
+
+        function hideSuccessModal() {
+            successModal.classList.add('hidden');
+            successModal.classList.remove('flex');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Close modal event listeners
+        closeModalButton.addEventListener('click', hideSuccessModal);
+
+        // Close modal when clicking outside
+        successModal.addEventListener('click', (e) => {
+            if (e.target === successModal) {
+                hideSuccessModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !successModal.classList.contains('hidden')) {
+                hideSuccessModal();
+            }
+        });
+
         rentForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
@@ -249,10 +326,11 @@
                 const endDate = endDateInput.value;
                 const daysDifference = Math.ceil((new Date(endDate) - new Date(startDate)) / (1000 * 60 * 60 * 24));
                 
-                // Success feedback
-                const successMessage = `Rental request submitted successfully!\nStart Date: ${new Date(startDate).toLocaleDateString()}\nEnd Date: ${new Date(endDate).toLocaleDateString()}\nDuration: ${daysDifference} day${daysDifference > 1 ? 's' : ''}`;
+                // Show success modal instead of alert
+                showSuccessModal(startDate, endDate, daysDifference, myCode);
+                console.log(`Rental request submitted:\nStart Date: ${startDate}\nEnd Date: ${endDate}\nDuration: ${daysDifference} day(s)\nCode: ${myCode}`);
                 
-                // Optional: Reset form or redirect
+                // Optional: Reset form
                 // rentForm.reset();
             }
         });

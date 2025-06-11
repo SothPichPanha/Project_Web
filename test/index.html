@@ -3,218 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rent - Best Book Store</title>
+    <title>Shopping Cart - Best Book Store</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body {
-            background-color: #f5f1eb;
-        }
-        .date-input::-webkit-calendar-picker-indicator {
-            opacity: 0;
-            position: absolute;
-            right: 0;
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-        }
-        .hamburger-line {
-            transition: all 0.3s ease;
-        }
-        .hamburger-active .hamburger-line:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        .hamburger-active .hamburger-line:nth-child(2) {
-            opacity: 0;
-        }
-        .hamburger-active .hamburger-line:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
-    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="min-h-screen" style="background-color: #f5f1eb;">
-    <!-- Navigation Bar -->
+<style>
+    a {
+        text-decoration: none;
+    }
+    html {
+    scroll-behavior: smooth;
+}
 
-<button id="mobile-menu-button" class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1">
-                    <span class="hamburger-line w-6 h-0.5 bg-gray-600 block"></span>
-                    <span class="hamburger-line w-6 h-0.5 bg-gray-600 block"></span>
-                    <span class="hamburger-line w-6 h-0.5 bg-gray-600 block"></span>
-                </button>
-    <!-- Main Content -->
-    <main class="flex items-center justify-center min-h-screen px-4 py-8">
-        <!-- Rent Modal -->
-        <div class="bg-white rounded-2xl shadow-lg p-8 w-full max-w-md relative">
-            <!-- Close Button -->
-            <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors duration-200">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
-            
-            <!-- Title -->
-            <h2 class="text-2xl font-semibold text-gray-800 mb-8 text-center">Rent</h2>
-            
-            <!-- Form -->
-            <form id="rent-form" class="space-y-6">
-                <!-- Start Date -->
-                <div class="space-y-2">
-                    <label for="start-date" class="block text-sm font-medium text-gray-700">Start</label>
-                    <div class="relative">
-                        <input 
-                            type="date" 
-                            id="start-date" 
-                            name="start-date"
-                            class="date-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors duration-200 pr-10"
-                            required
-                        >
-                        <i class="fas fa-calendar-alt absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></i>
-                    </div>
-                </div>
-                
-                <!-- End Date -->
-                <div class="space-y-2">
-                    <label for="end-date" class="block text-sm font-medium text-gray-700">End</label>
-                    <div class="relative">
-                        <input 
-                            type="date" 
-                            id="end-date" 
-                            name="end-date"
-                            class="date-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors duration-200 pr-10"
-                            required
-                        >
-                        <i class="fas fa-calendar-alt absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></i>
-                    </div>
-                </div>
-                
-                <!-- Error Message -->
-                <div id="error-message" class="hidden bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
-                </div>
-                
-                <!-- Rent Button -->
-                <button 
-                    type="submit" 
-                    class="w-full bg-amber-300 hover:bg-amber-400 text-gray-800 font-medium py-3 px-6 rounded-lg transition-colors duration-200 focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
-                >
-                    Rent now
-                </button>
-            </form>
+</style>
+<body class="mx-8 sm:mx-10 bg-[#FBF3E6]">
+    <!-- Header -->
+    <header class="sticky top-0 my-10 bg-[#FBF3E6] z-50">
+    <div class="flex justify-between my-4 sm:items-center">
+        <!-- Hamburger Menu -->
+        <button id="menu-button" id="mobile-menu" class="sm:w-8 sm:h-8 sm:rounded-full sm:flex items-center sm:justify-center md:hidden">
+            <img src="/PHOTO/Menu.png" alt="">
+        </button>
+
+        <!-- Navigation (Desktop) -->
+        <div id="home" class="hidden md:flex md:flex-col md:font-bold md:text-[20px] md:py-4 md:gap-4">
+            <nav>
+                <ul class="md:flex md:flex-row md:gap-4 md:items-center md:justify-center">
+                    <li><a href="1Home_Page.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">About Us</a></li>
+                </ul>
+            </nav>
         </div>
-    </main>
+
+        <!-- Logo -->
+        <div id="logo" class="flex items-center w-fit">
+            <img src="/PHOTO/Logo.png" alt="" class="sm:h-10 sm:w-25 h-8 w-15">
+            <h2 class="sm:py-4 font-bold sm:text-[20px] text-[15px]">Best Book Store</h2>
+        </div>
+
+        <!-- Cart & Profile -->
+        <div class="w-fit sm:flex sm:items-center sm:gap-2 sm:my-2">
+            <div class="flex items-center gap-4">
+                <!-- Search Bar (Desktop) -->
+                <div class="hidden md:flex items-center bg-white rounded-full border border-gray-300 px-4 py-2 w-48">
+                    <input type="text" placeholder="Search" class="flex-1 outline-none text-sm bg-transparent">
+                    <img src="/PHOTO/search_icon.png" alt="">
+                </div>
+
+                <!-- Search Icon (Mobile) -->
+                <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center md:hidden">
+                    <img src="/PHOTO/search.png" class="" alt="">
+                </button>
+
+                <button class="w-5 h-5 bg-black rounded-full sm:w-8 sm:h-8 flex items-center justify-center">
+                    <img src="/PHOTO/Shopping Cart.png" alt="">
+                </button>
+
+                <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center">
+                    <img src="/PHOTO/Customer.png" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" id="menu-button" class="sm:hidden md:hidden hidden absolute top-full left-0 w-full bg-[#FBF3E6] z-50 p-4 space-y-4 shadow-md sm:absolute sm:top-full sm:left-0 sm:w-full sm:bg-[#FBF3E6] sm:z-50 sm:p-4 sm:space-y-4 sm:shadow-md">
+        <a href="1Home_Page.html" class="block text-lg hover:text-gray-500 transition-all">Home</a>
+        <a href="services.html" class="block text-lg hover:text-gray-500 transition-all">Store</a>
+        <a href="about.html" class="block text-lg hover:text-gray-500 transition-all">About Us</a>
+    </div>
+</header>
+
+    <!-- Main Content -->
+    <div class="">
+        <h2 class="text-2xl font-light text-center text-gray-800 mb-8 lg:mb-12 md:text-[80px] md:flex md:justify-center">Shopping Card</h2>
+        
+        <!-- Cart Items Container -->
+        <div class=" rounded-lg shadow-sm overflow-hidden mb-8">
+            <!-- Desktop Table Header -->
+            <div class="hidden lg:flex items-center  px-10 py-4 border-b border-gray-200">
+                <div class="w-32 text-gray-600 font-medium">Item</div>
+                <div class="flex-1 ml-6 text-gray-600 font-medium">Details</div>
+                <div class="w-24 text-center text-gray-600 font-medium">Qty</div>
+                <div class="w-24 text-center text-gray-600 font-medium">Price</div>
+                <div class="w-16 text-center text-gray-600 font-medium">Action</div>
+            </div>
+
+            <!-- Cart Items -->
+            <div id="cart-items">
+                <!-- Items will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Total Section -->
+        <div class=" rounded-lg  p-6 lg:p-8">
+            <div class="flex float-right mr-[30px] gap-10 items-center mb-6 lg:mb-8 px-4">
+                <span class="text-xl lg:text-2xl font-medium text-gray-800">Total: <span id="total-quantity">7</span></span>
+                <span class="text-xl lg:text-2xl font-medium text-gray-800">$<span id="total-price">62.93</span></span>
+            </div>
+            
+            <div class="flex flex-col md:justify-center mt-[80px] sm:flex-row gap-4 justify-center">
+                <a href="5Rent.html"><button id="reset-btn" class="bg-pink-400 hover:bg-pink-400 text-gray-800 font-medium rounded-xl px-6 py-2 lg:px-8 lg:py-3 text-base lg:text-lg transition-colors">
+                    Rent
+                </button></a>
+
+                <button id="buy-btn" class="bg-pink-400 hover:bg-pink-500 text-gray-800 font-medium rounded-xl px-6 py-2 lg:px-8 lg:py-3 text-base lg:text-lg transition-colors">
+                    Buy
+                </button>
+            </div>
+        </div>
+    </div>
 
     <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+        // Cart data
+        let cartItems = [];
+        let selectedBookIds = []; // Track multiple selected books
         
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenuButton.classList.toggle('hamburger-active');
-        });
+        // Different book cover images
+       const bookImages = [
+    "/PHOTO/1My Heavenly Favorite.webp",
+    "/PHOTO/2That's All I Know.jpg",
+    "/PHOTO/3Another Book Cover.jpg",
+    "/PHOTO/4Book Title Example.webp",
+    "/PHOTO/5New Book Cover.png",
+    "/PHOTO/6Interesting Read.jpg",
+    "/PHOTO/7Final Book Image.webp"
+];
 
-        // Form handling
-        const rentForm = document.getElementById('rent-form');
-        const startDateInput = document.getElementById('start-date');
-        const endDateInput = document.getElementById('end-date');
-        const errorMessage = document.getElementById('error-message');
-
-        // Set default dates (today and tomorrow)
-        const today = new Date();
-        const tomorrow = new Date(today);
-        tomorrow.setDate(tomorrow.getDate() + 1);
-
-        startDateInput.value = today.toISOString().split('T')[0];
-        endDateInput.value = tomorrow.toISOString().split('T')[0];
-
-        // Set minimum dates
-        startDateInput.min = today.toISOString().split('T')[0];
-        endDateInput.min = today.toISOString().split('T')[0];
-
-        // Update end date minimum when start date changes
-        startDateInput.addEventListener('change', () => {
-            const startDate = new Date(startDateInput.value);
-            const nextDay = new Date(startDate);
-            nextDay.setDate(nextDay.getDate() + 1);
-            
-            endDateInput.min = nextDay.toISOString().split('T')[0];
-            
-            // If end date is before new minimum, update it
-            if (endDateInput.value && new Date(endDateInput.value) <= startDate) {
-                endDateInput.value = nextDay.toISOString().split('T')[0];
-            }
-            
-            hideError();
-        });
-
-        // Hide error when end date changes
-        endDateInput.addEventListener('change', hideError);
-
-        function showError(message) {
-            errorMessage.textContent = message;
-            errorMessage.classList.remove('hidden');
-        }
-
-        function hideError() {
-            errorMessage.classList.add('hidden');
-        }
-
-        function validateDates() {
-            const startDate = new Date(startDateInput.value);
-            const endDate = new Date(endDateInput.value);
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
-
-            if (!startDateInput.value || !endDateInput.value) {
-                showError('Please select both start and end dates.');
-                return false;
-            }
-
-            if (startDate < today) {
-                showError('Start date cannot be in the past.');
-                return false;
-            }
-
-            if (endDate <= startDate) {
-                showError('End date must be after the start date.');
-                return false;
-            }
-
-            const daysDifference = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
-            if (daysDifference > 30) {
-                showError('Rental period cannot exceed 30 days.');
-                return false;
-            }
-
-            return true;
-        }
-
-        rentForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            if (validateDates()) {
-                const startDate = startDateInput.value;
-                const endDate = endDateInput.value;
-                const daysDifference = Math.ceil((new Date(endDate) - new Date(startDate)) / (1000 * 60 * 60 * 24));
-                
-                // Success feedback
-                const successMessage = `Rental request submitted successfully!\nStart Date: ${new Date(startDate).toLocaleDateString()}\nEnd Date: ${new Date(endDate).toLocaleDateString()}\nDuration: ${daysDifference} day${daysDifference > 1 ? 's' : ''}`;
-                
-                alert(successMessage);
-                console.log('Rent Form Submitted:', {
-                    startDate,
-                    endDate,
-                    duration: daysDifference
+        
+        // Initialize cart with 7 different items
+        function initializeCart() {
+            for (let i = 1; i <= 7; i++) {
+                cartItems.push({
+                    id: i,
+                    title: "My Heavenly Favourite",
+                    type: "A Novel",
+                    author: "Laura Barnett",
+                    price: 8.99,
+                    quantity: 1,
+                    image: bookImages[i - 1] // Use different image for each book
                 });
+            }
+            renderCart();
+            updateTotals();
+        }
+        
+        // Select/deselect book function
+        function selectBook(bookId) {
+            const index = selectedBookIds.indexOf(bookId);
+            if (index > -1) {
+                // Book is already selected, remove it (undo selection)
+                selectedBookIds.splice(index, 1);
+            } else {
+                // Book is not selected, add it
+                selectedBookIds.push(bookId);
+            }
+            renderCart(); // Re-render to update visual selection
+        }
+        
+        // Render cart items
+        function renderCart() {
+            const cartContainer = document.getElementById('cart-items');
+            cartContainer.innerHTML = '';
+            
+            cartItems.forEach((item) => {
+                const isSelected = selectedBookIds.includes(item.id);
+                const itemElement = document.createElement('div');
+                itemElement.className = 'border-b border-gray-100 last:border-b-0';
                 
-                // Optional: Reset form or redirect
-                // rentForm.reset();
+                itemElement.innerHTML = `
+                    <!-- Mobile Layout -->
+                    <div class="lg:hidden p-4 hover:bg-gray-50 cursor-pointer relative transition-all duration-300 ${isSelected ? 'bg-blue-50 border-2 border-blue-300 rounded-lg shadow-md' : ''}" onclick="selectBook(${item.id})">
+                        ${isSelected ? '<div class="absolute top-2 right-2 z-10"><i class="fas fa-check-circle text-blue-500 text-xl"></i></div>' : ''}
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="relative">
+                                <img src="${item.image}" alt="${item.title}" class="w-16 h-20 object-cover rounded shadow-sm flex-shrink-0 ${isSelected ? 'ring-2 ring-blue-400' : ''}">
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="font-medium text-gray-800 text-base mb-1 ${isSelected ? 'text-blue-800' : ''}">${item.title}</h3>
+                                <p class="text-sm text-gray-600 mb-1">${item.type}</p>
+                                <p class="text-sm">
+                                    <a href="#" class="text-blue-600 underline hover:text-blue-800">${item.author}</a>
+                                    <span class="text-gray-600"> (Author)</span>
+                                </p>
+                            </div>
+                            <button onclick="event.stopPropagation(); removeItem(${item.id})" class="text-red-500 hover:text-red-700 p-2 flex-shrink-0">
+                                <i class="fas fa-trash text-lg"></i>
+                            </button>
+                        </div>
+                        <div class="flex justify-between items-center pt-2">
+                            <div class="flex items-center gap-2">
+                                <label class="text-sm text-gray-600 font-medium">Qty:</label>
+                                <input type="number" min="1" value="${item.quantity}" 
+                                       onchange="updateQuantity(${item.id}, this.value)" onclick="event.stopPropagation()"
+                                       class="w-12 text-center px-2 py-1 border border-gray-300 rounded focus:outline-none focus:border-orange-500">
+                            </div>
+                            <div class="text-lg font-medium text-gray-800">$${item.price.toFixed(2)}</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Desktop Layout -->
+                    <div class="hidden lg:flex items-center px-8 py-6 hover:bg-gray-50 cursor-pointer relative transition-all duration-300 ${isSelected ? 'bg-blue-50 border-2 border-blue-300 rounded-lg shadow-md' : ''}" onclick="selectBook(${item.id})">
+                        ${isSelected ? '<div class="absolute top-4 right-4 z-10"><i class="fas fa-check-circle text-blue-500 text-2xl"></i></div>' : ''}
+                        <div class="w-32 flex-shrink-0">
+                            <img src="${item.image}" alt="${item.title}" class="w-[162px] h-[241px] object-cover rounded shadow-sm mx-auto ${isSelected ? 'ring-2 ring-blue-400' : ''}">
+                        </div>
+                        <div class="flex-1 ml-6 md:mb-[178px]">
+                            <h3 class="font-medium text-gray-800 text-lg mb-1 ${isSelected ? 'text-blue-800' : ''}">${item.title}</h3>
+                            <p class="text-base text-gray-600 mb-1">${item.type}</p>
+                            <p class="text-base">
+                                <a href="#" class="text-blue-600  hover:text-blue-800">${item.author}</a>
+                                <span class="text-gray-600"> (Author)</span>
+                            </p>
+                        </div>
+                        <div class="w-24 text-center">
+                            <input type="number" min="1" value="${item.quantity}" 
+                                   onchange="updateQuantity(${item.id}, this.value)" onclick="event.stopPropagation()"
+                                   class="w-12 text-center px-2 py-2 border border-gray-300 rounded focus:outline-none focus:border-orange-500 text-base">
+                        </div>
+                        <div class="w-24 text-center">
+                            <span class="font-medium text-gray-800 text-lg">$${item.price.toFixed(2)}</span>
+                        </div>
+                        <div class="w-16 text-center">
+                            <button onclick="event.stopPropagation(); removeItem(${item.id})" class="text-red-500 hover:text-red-700 p-2">
+                                <i class="fas fa-trash text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                cartContainer.appendChild(itemElement);
+            });
+        }
+        
+        // Update item quantity
+        function updateQuantity(itemId, newQuantity) {
+            const quantity = parseInt(newQuantity);
+            if (quantity < 1) return;
+            
+            const item = cartItems.find(item => item.id === itemId);
+            if (item) {
+                item.quantity = quantity;
+                updateTotals();
             }
-        });
-
-        // Close modal on outside click (for demonstration)
-        document.addEventListener('click', (e) => {
-            const modal = document.querySelector('.bg-white.rounded-2xl');
-            if (!modal.contains(e.target) && !e.target.closest('nav')) {
-                console.log('Modal background clicked - in a real app, this might close the modal');
+        }
+        
+        // Remove item from cart
+        function removeItem(itemId) {
+            cartItems = cartItems.filter(item => item.id !== itemId);
+            // Remove from selection if the item was selected
+            const index = selectedBookIds.indexOf(itemId);
+            if (index > -1) {
+                selectedBookIds.splice(index, 1);
             }
-        });
+            renderCart();
+            updateTotals();
+        }
+        
+        // Update totals
+        function updateTotals() {
+            const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+            const totalPrice = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+            document.getElementById('total-quantity').textContent = totalQuantity;
+            document.getElementById('total-price').textContent = totalPrice.toFixed(2);
+            if (document.getElementById('cart-badge')) {
+                document.getElementById('cart-badge').textContent = totalQuantity;
+            }
+        }
+        
+        // Initialize the cart when the page loads
+        initializeCart();
     </script>
 </body>
 </html>
