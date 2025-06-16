@@ -1,0 +1,229 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <link rel="stylesheet" href="/CSS/Home_Page.css">
+    <link rel="stylesheet" href="/CSS/6Shop.css">
+    
+
+</head>
+<body class="mx-8 sm:mx-10 bg-[#FBF3E6]">
+<header class="sticky top-0 my-10 bg-[#FBF3E6] z-50">
+    <div class="flex justify-between my-4 sm:items-center">
+        <!-- Hamburger Menu -->
+        <button id="menu-button" id="mobile-menu" class="sm:w-8 sm:h-8 sm:rounded-full sm:flex items-center sm:justify-center md:hidden">
+            <img src="/PHOTO/Menu.png" alt="">
+        </button>
+
+        <!-- Navigation (Desktop) -->
+        <div id="home" class="hidden md:flex md:flex-col md:font-bold md:text-[20px] md:py-4 md:gap-4">
+            <nav>
+                <ul class="md:flex md:flex-row md:gap-4 md:items-center md:justify-center">
+                    <li><a href="1Home_Page.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Logo -->
+        <div id="logo" class="flex items-center w-fit">
+            <img src="/PHOTO/Logo.png" alt="" class="sm:h-10 sm:w-25 h-8 w-15">
+            <h2 class="sm:py-4 font-bold sm:text-[20px] text-[15px]">Best Book Store</h2>
+        </div>
+
+        <!-- Cart & Profile -->
+        <div class="w-fit sm:flex sm:items-center sm:gap-2 sm:my-2">
+            <div class="flex items-center gap-4">
+                <!-- Search Bar (Desktop) -->
+                <div class="hidden md:flex items-center bg-white rounded-full border border-gray-300 px-4 py-2 w-48">
+                    <input type="text" placeholder="Search" class="flex-1 outline-none text-sm bg-transparent">
+                    <img src="/PHOTO/search_icon.png" alt="">
+                </div>
+
+                <!-- Search Icon (Mobile) -->
+                <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center md:hidden">
+                    <img src="/PHOTO/search.png" class="" alt="">
+                </button>
+
+                <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center">
+                    <a href="4Card.html"><img src="/PHOTO/Shopping Cart.png" alt=""></a>
+                    
+                </button>
+
+                <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center">
+                    <img src="/PHOTO/Customer.png" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" id="menu-button" class="sm:hidden md:hidden hidden absolute top-full left-0 w-full bg-[#FBF3E6] z-50 p-4 space-y-4 shadow-md sm:absolute sm:top-full sm:left-0 sm:w-full sm:bg-[#FBF3E6] sm:z-50 sm:p-4 sm:space-y-4 sm:shadow-md">
+        <a href="1Home_Page.html" class="block text-lg hover:text-gray-500 transition-all">Home</a>
+        <a href="services.html" class="block text-lg hover:text-gray-500 transition-all">Store</a>
+        <a href="about.html" class="block text-lg hover:text-gray-500 transition-all">About Us</a>
+
+    </div>
+</header>
+
+<main>
+        <div class="max-w-6xl mx-auto px-4">
+        <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">Best Book Store Checkout</h1>
+        
+        <div class="lg:grid lg:grid-cols-2 lg:gap-8 space-y-6 lg:space-y-0">
+            <!-- Left Box - Information -->
+            <div class="bg-[#FBF3E6] border-2 border-gray-300 rounded-lg p-6 shadow-md">
+                <h2 class="text-xl font-semibold mb-6 text-gray-800">Information</h2>
+                
+                <!-- Name fields -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+                    <input 
+                        type="text" 
+                        placeholder="First name" 
+                        id="firstName"
+                        class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                    <input 
+                        type="text" 
+                        placeholder="Last name" 
+                        id="lastName"
+                        class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                </div>
+                
+                <!-- Address -->
+                <input 
+                    type="text" 
+                    placeholder="Address" 
+                    id="address"
+                    class="w-full p-3 border border-gray-300 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                
+                <!-- Phone number -->
+                <input 
+                    type="tel" 
+                    placeholder="Phone number" 
+                    id="phone"
+                    class="w-full p-3 border border-gray-300 rounded-md mb-6 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                
+                <!-- Card section -->
+                <h3 class="text-lg font-semibold mb-4 text-gray-800">Card</h3>
+                <div class="flex gap-4 mb-6 flex-wrap justify-between lg:justify-start">
+                    <div class="card-option relative w-20 h-20 rounded-lg shadow-md cursor-pointer transition duration-300 aba-bg" data-card="aba">
+                        <div class="w-full h-full flex items-center justify-center text-white font-bold text-sm">
+                            ABA
+                        </div>
+                        <div class="selection-dot absolute -top-1 -right-1 w-5 h-5 bg-white rounded-full border-2 border-gray-300 hidden items-center justify-center">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-option relative w-20 h-20 rounded-lg shadow-md cursor-pointer transition duration-300 wing-bg" data-card="wing">
+                        <div class="w-full h-full flex items-center justify-center text-white font-bold text-sm">
+                            Wing
+                        </div>
+                        <div class="selection-dot absolute -top-1 -right-1 w-5 h-5 bg-white rounded-full border-2 border-gray-300 hidden items-center justify-center">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-option relative w-20 h-20 rounded-lg shadow-md cursor-pointer transition duration-300 amret-bg selected" data-card="amret">
+                        <div class="w-full h-full flex items-center justify-center text-white font-bold text-sm">
+                            Amret
+                        </div>
+                        <div class="selection-dot absolute -top-1 -right-1 w-5 h-5 bg-white rounded-full border-2 border-gray-300 flex items-center justify-center">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-option relative w-20 h-20 rounded-lg shadow-md cursor-pointer transition duration-300 paypal-bg" data-card="paypal">
+                        <div class="w-full h-full flex items-center justify-center text-white font-bold text-sm">
+                            PayPal
+                        </div>
+                        <div class="selection-dot absolute -top-1 -right-1 w-5 h-5 bg-white rounded-full border-2 border-gray-300 hidden items-center justify-center">
+                            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Confirm button -->
+                <button 
+                    id="confirmBtn"
+                    class="w-full bg-blue-600 text-white py-3 px-6 rounded-md font-semibold hover:bg-blue-700 transition duration-200"
+                >
+                    Confirm
+                </button>
+            </div>
+            
+            <!-- Right Box - Order Summary -->
+            <div class="bg-orange-50 border-2 border-orange-200 rounded-lg p-6 shadow-md">
+                <h2 class="text-xl font-semibold mb-6 text-gray-800">Order Summary</h2>
+                
+                <!-- Promo code section -->
+                <div class="mb-6">
+                    <p class="text-sm text-gray-600 mb-2">Apply a promo code</p>
+                    <div class="flex gap-2">
+                        <input 
+                            type="text" 
+                            placeholder="ENTER CODE" 
+                            id="promoCode"
+                            class="flex-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        >
+                        <button 
+                            id="applyBtn"
+                            class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition duration-200 text-sm"
+                        >
+                            APPLY
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Price breakdown -->
+                <div class="space-y-2 mb-6">
+                    <div class="flex justify-between text-gray-700">
+                        <span>Item Total</span>
+                        <span id="itemTotal">$62.93</span>
+                    </div>
+                    <div class="flex justify-between text-gray-700">
+                        <span>Promo code</span>
+                        <span id="promoDiscount">10%</span>
+                    </div>
+                    <div class="border-t pt-2 flex justify-between font-semibold text-lg">
+                        <span>Total</span>
+                        <span id="finalTotal">$56.63</span>
+                    </div>
+                </div>
+                
+                <!-- Thank you message -->
+                <div class="bg-gray-100 p-4 rounded-md mb-6 text-sm text-gray-700 leading-relaxed">
+                    Thank you for your order! Your books will soon be on their way, and we hope each page brings you joy, knowledge, and inspiration. Whether you're reading for fun, learning something new, or escaping into a different world — we're excited to be part of your reading journey. Enjoy every chapter, and remember your next great adventure starts with a good book.
+                </div>
+                
+                <!-- Order Now button -->
+                <button 
+                    id="orderNowBtn"
+                    class="w-full bg-blue-600 text-white py-4 px-6 rounded-md font-semibold text-lg hover:bg-blue-700 transition duration-200 mb-3"
+                >
+                    Order Now
+                </button>
+                
+                <!-- Notice -->
+                <p class="text-xs text-gray-500 text-center">
+                    Please ensure all your information is correct.
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    
+</footer>
+
+<script src="/JS/6Shop.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+ 
+        body {
+            background-color: #f5f1eb;
+        }
+        .date-input::-webkit-calendar-picker-indicator {
+            opacity: 0;
+            position: absolute;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        .hamburger-line {
+            transition: all 0.3s ease;
+        }
+        .hamburger-active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger-active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        .modal-overlay {
+            backdrop-filter: blur(4px);
+        }
+ 

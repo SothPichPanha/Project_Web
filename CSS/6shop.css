@@ -1,0 +1,22 @@
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css');
+        
+        .payment-icon {
+            width: 60px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        
+        .aba-bg { background-color: #1e40af; }
+        .wing-bg { background-color: #1f2937; }
+        .amret-bg { background-color: #059669; }
+        .paypal-bg { background-color: #3b82f6; }
+        
+        body {
+            background-color: #fef7ed;
+        }
