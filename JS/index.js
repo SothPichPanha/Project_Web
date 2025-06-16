@@ -40,3 +40,5 @@ bestSellersContainer.addEventListener('wheel', (e) => {
             }
         });
  
+
+//6 shopping cart functionality
