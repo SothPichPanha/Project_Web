@@ -1,17 +1,15 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Best Book Store Checkout</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    
-    <link rel="stylesheet" href="/CSS/Home_Page.css">
-    <link rel="stylesheet" href="/CSS/6Shop.css">
-    
-
+    <link rel="stylesheet" href="/CSS/6shop.css">
+    <link rel="stylesheet" href="/CSS/1Home_Page.css">
 </head>
 <body class="mx-8 sm:mx-10 bg-[#FBF3E6]">
-<header class="sticky top-0 my-10 bg-[#FBF3E6] z-50">
+<header class="sticky top-0 bg-[#FBF3E6] z-50 py-4">
     <div class="flex justify-between my-4 sm:items-center">
         <!-- Hamburger Menu -->
         <button id="menu-button" id="mobile-menu" class="sm:w-8 sm:h-8 sm:rounded-full sm:flex items-center sm:justify-center md:hidden">
@@ -22,9 +20,9 @@
         <div id="home" class="hidden md:flex md:flex-col md:font-bold md:text-[20px] md:py-4 md:gap-4">
             <nav>
                 <ul class="md:flex md:flex-row md:gap-4 md:items-center md:justify-center">
-                    <li><a href="1Home_Page.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">About Us</a></li>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a  href="#store"id="about-link">Store</a></li>
+                    <li><a href="#footer">About Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -43,18 +41,15 @@
                     <input type="text" placeholder="Search" class="flex-1 outline-none text-sm bg-transparent">
                     <img src="/PHOTO/search_icon.png" alt="">
                 </div>
-
-                <!-- Search Icon (Mobile) -->
                 <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center md:hidden">
                     <img src="/PHOTO/search.png" class="" alt="">
                 </button>
+                    <a href="4Card.html"><button class="w-5 h-5 bg-blu rounded-full sm:w-8 sm:h-8 flex items-center justify-center">
+                    <img src="/PHOTO/Shopping Cart.png" alt="">
+                </button></a>
+                
 
-                <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center">
-                    <a href="4Card.html"><img src="/PHOTO/Shopping Cart.png" alt=""></a>
-                    
-                </button>
-
-                <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center">
+                <button class="w-5 h-5 bg-orange rounded-full sm:w-8 sm:h-8 flex items-center justify-center">
                     <img src="/PHOTO/Customer.png" alt="">
                 </button>
             </div>
@@ -63,35 +58,33 @@
 
     <!-- Mobile Navigation Menu -->
     <div id="mobile-menu" id="menu-button" class="sm:hidden md:hidden hidden absolute top-full left-0 w-full bg-[#FBF3E6] z-50 p-4 space-y-4 shadow-md sm:absolute sm:top-full sm:left-0 sm:w-full sm:bg-[#FBF3E6] sm:z-50 sm:p-4 sm:space-y-4 sm:shadow-md">
-        <a href="1Home_Page.html" class="block text-lg hover:text-gray-500 transition-all">Home</a>
-        <a href="services.html" class="block text-lg hover:text-gray-500 transition-all">Store</a>
-        <a href="about.html" class="block text-lg hover:text-gray-500 transition-all">About Us</a>
-
+        <a href="#Home" class="block text-lg hover:text-gray-500 transition-all">Home</a>
+        <a href="#store" id="about-link" class="block text-lg hover:text-gray-500 transition-all">Store</a>
+        <a href="#footer" class="block text-lg hover:text-gray-500 transition-all">About Us</a>
     </div>
 </header>
-
 <main>
-        <div class="max-w-6xl mx-auto px-4">
+    <div class="max-w-6xl mx-auto px-4">
         <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">Best Book Store Checkout</h1>
         
         <div class="lg:grid lg:grid-cols-2 lg:gap-8 space-y-6 lg:space-y-0">
             <!-- Left Box - Information -->
-            <div class="bg-[#FBF3E6] border-2 border-gray-300 rounded-lg p-6 shadow-md">
-                <h2 class="text-xl font-semibold mb-6 text-gray-800">Information</h2>
-                
+            <div class="bg-[#FBF3E6] border-2 border-black rounded-lg p-6 shadow-md">
+                <h2 class="text-[30px] font-semibold mb-6 text-gray-800 flex justify-center">Information</h2>
+                <hr>
                 <!-- Name fields -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4 mt-6">
                     <input 
                         type="text" 
                         placeholder="First name" 
                         id="firstName"
-                        class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        class="bg-white w-full p-3 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
                     <input 
                         type="text" 
                         placeholder="Last name" 
                         id="lastName"
-                        class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        class="bg-white w-full p-3 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
                 </div>
                 
@@ -100,7 +93,7 @@
                     type="text" 
                     placeholder="Address" 
                     id="address"
-                    class="w-full p-3 border border-gray-300 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    class="bg-white w-full p-3 border border-black rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
                 
                 <!-- Phone number -->
@@ -108,48 +101,49 @@
                     type="tel" 
                     placeholder="Phone number" 
                     id="phone"
-                    class="w-full p-3 border border-gray-300 rounded-md mb-6 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    class="bg-white w-full p-3 border border-black rounded-md mb-6 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
                 
                 <!-- Card section -->
                 <h3 class="text-lg font-semibold mb-4 text-gray-800">Card</h3>
                 <div class="flex gap-4 mb-6 flex-wrap justify-between lg:justify-start">
-                    <div class="card-option relative w-20 h-20 rounded-lg shadow-md cursor-pointer transition duration-300 aba-bg" data-card="aba">
-                        <div class="w-full h-full flex items-center justify-center text-white font-bold text-sm">
-                            ABA
+                    <div class="card-option relative w-20 h-20 rounded-lg  cursor-pointer transition duration-300" data-card="aba">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <img src="/PHOTO/aba.jpg" alt="ABA" class="w-full h-full object-cover">
                         </div>
-                        <div class="selection-dot absolute -top-1 -right-1 w-5 h-5 bg-white rounded-full border-2 border-gray-300 hidden items-center justify-center">
+                        <div class="selection-dot absolute -top-1 -right-1 w-5 h-5 bg-white rounded-full border-2 border-black hidden items-center justify-center">
                             <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
                         </div>
                     </div>
                     
-                    <div class="card-option relative w-20 h-20 rounded-lg shadow-md cursor-pointer transition duration-300 wing-bg" data-card="wing">
-                        <div class="w-full h-full flex items-center justify-center text-white font-bold text-sm">
-                            Wing
+                    <div class="card-option relative w-20 h-20 rounded-lg  cursor-pointer transition duration-300 bg-white" data-card="wing">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <img src="/PHOTO/ace.jpg" alt="Wing" class="w-full h-full object-cover rounded">
                         </div>
-                        <div class="selection-dot absolute -top-1 -right-1 w-5 h-5 bg-white rounded-full border-2 border-gray-300 hidden items-center justify-center">
+                        <div class="selection-dot absolute -top-1 -right-1 w-5 h-5 bg-white rounded-full border-2 border-black hidden items-center justify-center">
                             <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
                         </div>
                     </div>
                     
-                    <div class="card-option relative w-20 h-20 rounded-lg shadow-md cursor-pointer transition duration-300 amret-bg selected" data-card="amret">
-                        <div class="w-full h-full flex items-center justify-center text-white font-bold text-sm">
-                            Amret
+                    <div class="card-option relative w-20 h-20 rounded-lg  cursor-pointer transition duration-300 bg-white selected" data-card="amret">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <img src="/PHOTO/arm.png" alt="Amret" class="w-full h-full object-cover rounded">
                         </div>
                         <div class="selection-dot absolute -top-1 -right-1 w-5 h-5 bg-white rounded-full border-2 border-gray-300 flex items-center justify-center">
                             <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
                         </div>
                     </div>
                     
-                    <div class="card-option relative w-20 h-20 rounded-lg shadow-md cursor-pointer transition duration-300 paypal-bg" data-card="paypal">
-                        <div class="w-full h-full flex items-center justify-center text-white font-bold text-sm">
-                            PayPal
+                    <div class="card-option relative w-20 h-20 rounded-lg  cursor-pointer transition duration-300 bg-white" data-card="paypal">
+                        <div class="w-full h-full flex items-center justify-center">
+                            <img src="/PHOTO/papay.jpg" alt="PayPal" class="w-full h-full object-cover rounded">
                         </div>
                         <div class="selection-dot absolute -top-1 -right-1 w-5 h-5 bg-white rounded-full border-2 border-gray-300 hidden items-center justify-center">
                             <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
                         </div>
                     </div>
                 </div>
+                
                 <!-- Confirm button -->
                 <button 
                     id="confirmBtn"
@@ -160,8 +154,8 @@
             </div>
             
             <!-- Right Box - Order Summary -->
-            <div class="bg-orange-50 border-2 border-orange-200 rounded-lg p-6 shadow-md">
-                <h2 class="text-xl font-semibold mb-6 text-gray-800">Order Summary</h2>
+            <div class="bg-orange-50 border-2 border-black rounded-lg p-6 shadow-md">
+                <h2 class="text-[30px] font-semibold mb-6 text-gray-800 flex justify-center">Order Summary</h2>
                 
                 <!-- Promo code section -->
                 <div class="mb-6">
@@ -171,16 +165,17 @@
                             type="text" 
                             placeholder="ENTER CODE" 
                             id="promoCode"
-                            class="flex-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            class="bg-white  flex-1 p-2 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                         >
                         <button 
                             id="applyBtn"
-                            class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition duration-200 text-sm"
+                            class="px-4 py-2 bg-white text-gray-700 rounded-md hover:bg-black transition duration-200 text-sm"
                         >
                             APPLY
                         </button>
                     </div>
                 </div>
+                <hr>
                 
                 <!-- Price breakdown -->
                 <div class="space-y-2 mb-6">
@@ -190,11 +185,11 @@
                     </div>
                     <div class="flex justify-between text-gray-700">
                         <span>Promo code</span>
-                        <span id="promoDiscount">10%</span>
+                        <span id="promoDiscount"></span>
                     </div>
                     <div class="border-t pt-2 flex justify-between font-semibold text-lg">
                         <span>Total</span>
-                        <span id="finalTotal">$56.63</span>
+                        <span id="finalTotal"></span>
                     </div>
                 </div>
                 
@@ -218,12 +213,15 @@
             </div>
         </div>
     </div>
+<!-- alert style -->
+<div id="custom-alert" class="hidden fixed top-5 right-5 bg-blue-500 text-white px-4 py-3 rounded shadow-lg z-50 flex justify-between items-center min-w-[250px] max-w-xs">
+  <span id="alert-message">Message</span>
+  <button onclick="closeCustomAlert()" class="ml-4 font-bold text-xl">×</button>
+</div>
+
 </main>
-
-<footer>
     
-</footer>
-
+    
 <script src="/JS/6Shop.js"></script>
 </body>
 </html>

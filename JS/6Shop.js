@@ -1,6 +1,6 @@
      // Store original values
         const originalTotal = 62.93;
-        let currentDiscount = 0.10; // 10% discount
+        let currentDiscount = 0; // 10% discount
         let promoApplied = true; // Start with promo applied
         let selectedCard = 'amret'; // Default selected card
         
@@ -54,17 +54,14 @@
             if (code === 'SAVE10' || code === 'BOOK10') {
                 currentDiscount = 0.10;
                 promoApplied = true;
-                alert('Promo code applied! 10% discount activated.');
+                showCustomAlert('Promo code applied! 10% discount activated.', 'success');
             } else if (code === 'SAVE20' || code === 'BOOK20') {
                 currentDiscount = 0.20;
                 promoApplied = true;
-                alert('Promo code applied! 20% discount activated.');
-            } else if (code === '') {
-                currentDiscount = 0.10;
-                promoApplied = true;
-                alert('Default 10% discount applied!');
+                showCustomAlert('Promo code applied! 20% discount activated.', 'success');
+        
             } else {
-                alert('Invalid promo code. Please try again.');
+                showCustomAlert('Invalid promo code. Please try again.', 'error');
                 return;
             }
             
@@ -80,7 +77,7 @@
             const phone = document.getElementById('phone').value;
             
             if (!firstName || !lastName || !address || !phone) {
-                alert('Please fill in all required fields.');
+               showCustomAlert('Please fill in all required fields.', 'warning');
                 return;
             }
             
@@ -92,7 +89,8 @@
                 paymentMethod: selectedCard
             });
             
-            alert(`Information confirmed! Payment method: ${selectedCard.toUpperCase()}. You can now proceed with your order.`);
+            showCustomAlert(`Information confirmed! Payment method: ${selectedCard.toUpperCase()}.`, 'info');
+            
         });
         
         // Order Now button functionality
@@ -103,12 +101,17 @@
             const phone = document.getElementById('phone').value;
             
             if (!firstName || !lastName || !address || !phone) {
-                alert('Please fill in all required information before placing your order.');
+               showCustomAlert('Please fill in all required fields.', 'warning');
                 return;
             }
             
             const finalAmount = finalTotalEl.textContent;
-            alert(`Order confirmed! Thank you ${firstName} ${lastName}. Your total is ${finalAmount}. Payment method: ${selectedCard.toUpperCase()}. We'll ship your books to: ${address}`);
+            
+            showCustomAlert(`Order confirmed! Thank you ${firstName} ${lastName}. Your total is ${finalAmount}.`, 'success');
+                 setTimeout(() => {
+        window.location.href = '/HTML/1Home_Page.html'; // Replace '/' with your homepage path if needed
+            }, 3000);
+
         });
         
         // Enter key support for promo code
@@ -120,3 +123,25 @@
         
         // Initialize the display
         updateTotal();
+
+ function showCustomAlert(message, type = 'info') {
+    const alertBox = document.getElementById('custom-alert');
+    const alertMessage = document.getElementById('alert-message');
+
+    // Reset and apply type class
+    alertBox.className = 'hidden fixed top-5 right-5 text-white px-4 py-3 rounded shadow-lg z-50 flex justify-between items-center min-w-[250px] max-w-xs';
+    alertBox.classList.add(type, 'show');
+
+    alertMessage.textContent = message;
+    alertBox.classList.remove('hidden');
+
+    // Auto-hide after 3 seconds
+    setTimeout(() => {
+      closeCustomAlert();
+    }, 3000);
+  }
+
+  function closeCustomAlert() {
+    const alertBox = document.getElementById('custom-alert');
+    alertBox.classList.remove('show');
+  } 

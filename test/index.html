@@ -8,16 +8,19 @@
     <style>
         @import url('https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css');
         
-        .payment-icon {
-            width: 60px;
-            height: 40px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 12px;
+        .card-option {
+            border: 2px solid transparent;
+        }
+        
+        .card-option:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-option.selected {
+            border-color: #3b82f6;
+            ring: 2px;
+            ring-color: #3b82f6;
         }
         
         .aba-bg { background-color: #1e40af; }
@@ -36,7 +39,7 @@
         
         <div class="lg:grid lg:grid-cols-2 lg:gap-8 space-y-6 lg:space-y-0">
             <!-- Left Box - Information -->
-            <div class="bg-[#FBF3E6] border-2 border-gray-300 rounded-lg p-6 shadow-md">
+            <div class="bg-white border-2 border-gray-300 rounded-lg p-6 shadow-md">
                 <h2 class="text-xl font-semibold mb-6 text-gray-800">Information</h2>
                 
                 <!-- Name fields -->
@@ -74,42 +77,43 @@
                 <!-- Card section -->
                 <h3 class="text-lg font-semibold mb-4 text-gray-800">Card</h3>
                 <div class="flex gap-4 mb-6 flex-wrap justify-between lg:justify-start">
-                    <div class="card-option relative w-20 h-20 rounded-lg shadow-md cursor-pointer transition duration-300 aba-bg" data-card="aba">
-                        <div class="w-full h-full flex items-center justify-center text-white font-bold text-sm">
-                            ABA
+                    <div class="card-option relative w-20 h-20 rounded-lg shadow-md cursor-pointer transition duration-300 bg-white" data-card="aba">
+                        <div class="w-full h-full flex items-center justify-center p-2">
+                            <img src="/PHOTO/12Trying.webp" alt="ABA" class="w-full h-full object-contain">
                         </div>
                         <div class="selection-dot absolute -top-1 -right-1 w-5 h-5 bg-white rounded-full border-2 border-gray-300 hidden items-center justify-center">
                             <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
                         </div>
                     </div>
                     
-                    <div class="card-option relative w-20 h-20 rounded-lg shadow-md cursor-pointer transition duration-300 wing-bg" data-card="wing">
-                        <div class="w-full h-full flex items-center justify-center text-white font-bold text-sm">
-                            Wing
+                    <div class="card-option relative w-20 h-20 rounded-lg shadow-md cursor-pointer transition duration-300 bg-white" data-card="wing">
+                        <div class="w-full h-full flex items-center justify-center p-2">
+                            <img src="https://via.placeholder.com/60x40/1f2937/ffffff?text=Wing" alt="Wing" class="w-full h-full object-contain rounded">
                         </div>
                         <div class="selection-dot absolute -top-1 -right-1 w-5 h-5 bg-white rounded-full border-2 border-gray-300 hidden items-center justify-center">
                             <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
                         </div>
                     </div>
                     
-                    <div class="card-option relative w-20 h-20 rounded-lg shadow-md cursor-pointer transition duration-300 amret-bg selected" data-card="amret">
-                        <div class="w-full h-full flex items-center justify-center text-white font-bold text-sm">
-                            Amret
+                    <div class="card-option relative w-20 h-20 rounded-lg shadow-md cursor-pointer transition duration-300 bg-white selected" data-card="amret">
+                        <div class="w-full h-full flex items-center justify-center p-2">
+                            <img src="https://via.placeholder.com/60x40/059669/ffffff?text=Amret" alt="Amret" class="w-full h-full object-contain rounded">
                         </div>
                         <div class="selection-dot absolute -top-1 -right-1 w-5 h-5 bg-white rounded-full border-2 border-gray-300 flex items-center justify-center">
                             <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
                         </div>
                     </div>
                     
-                    <div class="card-option relative w-20 h-20 rounded-lg shadow-md cursor-pointer transition duration-300 paypal-bg" data-card="paypal">
-                        <div class="w-full h-full flex items-center justify-center text-white font-bold text-sm">
-                            PayPal
+                    <div class="card-option relative w-20 h-20 rounded-lg shadow-md cursor-pointer transition duration-300 bg-white" data-card="paypal">
+                        <div class="w-full h-full flex items-center justify-center p-2">
+                            <img src="https://via.placeholder.com/60x40/003087/ffffff?text=PayPal" alt="PayPal" class="w-full h-full object-contain rounded">
                         </div>
                         <div class="selection-dot absolute -top-1 -right-1 w-5 h-5 bg-white rounded-full border-2 border-gray-300 hidden items-center justify-center">
                             <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
                         </div>
                     </div>
                 </div>
+                
                 <!-- Confirm button -->
                 <button 
                     id="confirmBtn"
@@ -179,7 +183,7 @@
         </div>
     </div>
     
-   <script>
+    <script>
         // Store original values
         const originalTotal = 62.93;
         let currentDiscount = 0.10; // 10% discount

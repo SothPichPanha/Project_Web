@@ -1,12 +1,13 @@
- 
-        // Mobile menu toggle
+  // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenuButton.classList.toggle('hamburger-active');
-        });
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenuButton.classList.toggle('hamburger-active');
+            });
+        }
 
         // Form handling
         const rentForm = document.getElementById('rent-form');
@@ -87,33 +88,32 @@
             return true;
         }
 
-function showSuccessModal(startDate, endDate, duration, code) {
-    const message = 
-        `Start Date: ${new Date(startDate).toLocaleDateString()}<br>` +
-        `End Date: ${new Date(endDate).toLocaleDateString()}<br>` +
-        `Duration: ${duration} day${duration > 1 ? 's' : ''}<br>` +
-        `Rental Code: <strong>${code}</strong>`;
-    
-    successMessage.innerHTML = message;
-    successModal.classList.remove('hidden');
-    successModal.classList.add('flex');
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
-}
         function generateNumericCode(length = 6) {
-  let code = '';
-  for (let i = 0; i < length; i++) {
-    const digit = Math.floor(Math.random() * 10); // random digit from 0-9
-    code += digit;
-  }
-  return code;
-}
+            let code = '';
+            for (let i = 0; i < length; i++) {
+                const digit = Math.floor(Math.random() * 10);
+                code += digit;
+            }
+            return code;
+        }
 
-const myCode = generateNumericCode();
+        function showSuccessModal(startDate, endDate, duration, code) {
+            const message = 
+                `Start Date: ${new Date(startDate).toLocaleDateString()}<br>` +
+                `End Date: ${new Date(endDate).toLocaleDateString()}<br>` +
+                `Duration: ${duration} day${duration > 1 ? 's' : ''}<br>` +
+                `Rental Code: <strong>${code}</strong>`;
+            
+            successMessage.innerHTML = message;
+            successModal.classList.remove('hidden');
+            successModal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
 
         function hideSuccessModal() {
             successModal.classList.add('hidden');
             successModal.classList.remove('flex');
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            document.body.style.overflow = 'auto';
         }
 
         // Close modal event listeners
@@ -133,6 +133,7 @@ const myCode = generateNumericCode();
             }
         });
 
+        // Form submission
         rentForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
@@ -140,20 +141,9 @@ const myCode = generateNumericCode();
                 const startDate = startDateInput.value;
                 const endDate = endDateInput.value;
                 const daysDifference = Math.ceil((new Date(endDate) - new Date(startDate)) / (1000 * 60 * 60 * 24));
+                const myCode = generateNumericCode();
                 
-                // Show success modal instead of alert
                 showSuccessModal(startDate, endDate, daysDifference, myCode);
                 console.log(`Rental request submitted:\nStart Date: ${startDate}\nEnd Date: ${endDate}\nDuration: ${daysDifference} day(s)\nCode: ${myCode}`);
-                
-                // Optional: Reset form
-                // rentForm.reset();
-            }
-        });
-
-        // Close modal on outside click (for demonstration)
-        document.addEventListener('click', (e) => {
-            const modal = document.querySelector('.bg-white.rounded-2xl');
-            if (!modal.contains(e.target) && !e.target.closest('nav')) {
-                console.log('Modal background clicked - in a real app, this might close the modal');
             }
         });
