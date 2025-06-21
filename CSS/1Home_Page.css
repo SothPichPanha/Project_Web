@@ -94,3 +94,18 @@ img {
 ::-webkit-scrollbar-thumb:hover {
     background: #ea580c;
 }
+ #custom-alert {
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  #custom-alert.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .success { background-color: #4CAF50; }
+  .error   { background-color: #f44336; }
+  .warning { background-color: #ff9800; }
+  .info    { background-color: #2196F3; }

@@ -21,7 +21,7 @@
     <header class="sticky top-0 my-10 bg-[#FBF3E6] z-50">
     <div class="flex justify-between my-4 sm:items-center">
         <!-- Hamburger Menu -->
-        <button id="menu-button" id="mobile-menu" class="sm:w-8 sm:h-8 sm:rounded-full sm:flex items-center sm:justify-center md:hidden">
+        <button id="menu-button"  class="sm:w-8 sm:h-8 sm:rounded-full sm:flex items-center sm:justify-center md:hidden">
             <img src="/PHOTO/Menu.png" alt="">
         </button>
 
@@ -31,7 +31,7 @@
                 <ul class="md:flex md:flex-row md:gap-4 md:items-center md:justify-center">
                     <li><a href="1Home_Page.html">Home</a></li>
                     <li><a href="1Home_Page.html#store">Store</a></li>
-                    <li><a href="services.html">About Us</a></li>
+                    <li><a href="#footer">About Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -71,13 +71,40 @@
     <div id="mobile-menu" id="menu-button" class="sm:hidden md:hidden hidden absolute top-full left-0 w-full bg-[#FBF3E6] z-50 p-4 space-y-4 shadow-md sm:absolute sm:top-full sm:left-0 sm:w-full sm:bg-[#FBF3E6] sm:z-50 sm:p-4 sm:space-y-4 sm:shadow-md">
         <a href="1Home_Page.html" class="block text-lg hover:text-gray-500 transition-all">Home</a>
         <a href="1Home_Page.html#store" class="block text-lg hover:text-gray-500 transition-all">Store</a>
-        <a href="about.html" class="block text-lg hover:text-gray-500 transition-all">About Us</a>
+        <a href="#footer" class="block text-lg hover:text-gray-500 transition-all">About Us</a>
     </div>
 </header>
+
+    <!-- Error Message Modal -->
+    <div id="error-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center px-4">
+        <div class="bg-white rounded-lg p-6 max-w-md w-full mx-auto shadow-xl">
+            <div class="flex items-center justify-center mb-4">
+                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                    <i class="fas fa-exclamation-triangle text-red-500 text-xl"></i>
+                </div>
+            </div>
+            <h3 class="text-lg font-semibold text-center text-gray-800 mb-2">No Items Selected</h3>
+            <p class="text-gray-600 text-center mb-6">Please select at least one book to proceed with your order.</p>
+            <div class="flex justify-center">
+                <button onclick="closeErrorModal()" class="bg-red-500 hover:bg-red-600 text-white font-medium px-6 py-2 rounded-lg transition-colors">
+                    OK, Got it
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Main Content -->
     <div class="">
         <h2 class="text-2xl font-light text-center text-gray-800 mb-8 lg:mb-12 md:text-[80px] md:flex md:justify-center">Shopping Card</h2>
+        
+        <!-- Selection Info -->
+        <div class="mb-6 text-center">
+            <p class="text-gray-600 text-sm md:text-base">
+                <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                Click on books to select them for purchase or rental
+                <span id="selection-count" class="ml-2 bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">0 selected</span>
+            </p>
+        </div>
         
         <!-- Cart Items Container -->
         <div class=" rounded-lg shadow-sm overflow-hidden mb-8">
@@ -104,201 +131,88 @@
             </div>
             
             <div class="flex flex-col md:justify-center mt-[80px] sm:flex-row gap-4 justify-center">
-                <a href="5Rent.html" class="bg-pink-400 hover:bg-pink-500 text-gray-800 font-medium rounded-xl px-6 py-2 lg:px-8 lg:py-3 text-base lg:text-lg transition-colors text-center ">
-                    <button id="reset-btn" ">
+                <button onclick="validateAndProceed('rent')" class="bg-pink-400 hover:bg-pink-500 text-gray-800 font-medium rounded-xl px-6 py-2 lg:px-8 lg:py-3 text-base lg:text-lg transition-colors text-center">
                     Rent
                 </button>
-                </a>
 
-                <a href="6Shop.html" class="bg-pink-400 hover:bg-pink-500 text-gray-800 font-medium rounded-xl px-6 py-2 lg:px-8 lg:py-3 text-base lg:text-lg transition-colors text-center ">
-                    <button id="reset-btn" ">
+                <button onclick="validateAndProceed('buy')" class="bg-pink-400 hover:bg-pink-500 text-gray-800 font-medium rounded-xl px-6 py-2 lg:px-8 lg:py-3 text-base lg:text-lg transition-colors text-center">
                     Buy
                 </button>
-                </a>
-                
             </div>
         </div>
     </div>
+<p id="footer"></p>
+   <footer class="w-full bg-[#F9DFB9] py-10 px-6 md:px-20">
+        <!-- Main Footer Content -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <!-- Section 1: Brand -->
+            <div class="text-center md:text-left">
+                <!-- Logo -->
+                <div class="flex items-center justify-center md:justify-start mb-3">
+                    <div class=" mr-2">
+                        <img src="/PHOTO/Logo.png" alt="Books" class="w-6 h-6">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800">Best Book Store</h3>
+                </div>
+                <p class="text-sm text-gray-700 leading-relaxed max-w-xs mx-auto md:mx-0">
+                    Read. Learn. Grow. Providing quality books and friendly service since 2005.
+                </p>
+            </div>
 
-    <script>
-        // Cart data
-        let cartItems = [];
-        let selectedBookIds = []; // Track multiple selected books
-        
-        // Different book cover images
-       const bookImages = [
-    "/PHOTO/1My Heavenly Favorite.webp",
-    "/PHOTO/2That's All I Know.jpg",
-    "/PHOTO/6The Lilac People.jpg",
-    "/PHOTO/13Origin Stories.webp",
-    "/PHOTO/18Lawless.jpg",
-    "/PHOTO/14Little Mercy.jpg",
-    "/PHOTO/15That's a Great Question, I'd Love to Tell You.webp"
-];  
-        const names = [
-            "My Heavenly Favourite",
-            "That's All I Know",
-            "The Lilac People",
-            "Origin Stories",
-            "Lawless",
-            "Little Mercy",
-            "That's a Great Question, I'd Love to Tell You"
-        ];
-        const authors = [
-            "Laura Barnett",
-            "Sokhom Panha",
-            "Yi Sokha",
-            "Thou Liaheng",
-            "Yi Monirom",
-            "Lionel Messi",
-            "Laura Barnett"
-        ];
- 
-        
-        // Initialize cart with 7 different items
-        function initializeCart() {
-            for (let i = 1; i <= 7; i++) {
-                cartItems.push({
-                    id: i,
-                    title: names[i - 1], // Use different names for each book
-                    type: "A Novel",
-                    author: authors[i - 1], // Use different authors for each book
-                    price: 8.99,
-                    quantity: 1,
-                    image: bookImages[i - 1] // Use different image for each book
-                });
-            }
-            renderCart();
-            updateTotals();
-        }
-        
-        // Select/deselect book function
-        function selectBook(bookId) {
-            const index = selectedBookIds.indexOf(bookId);
-            if (index > -1) {
-                // Book is already selected, remove it (undo selection)
-                selectedBookIds.splice(index, 1);
-            } else {
-                // Book is not selected, add it
-                selectedBookIds.push(bookId);
-            }
-            renderCart(); // Re-render to update visual selection
-        }
-        
-        // Render cart items
-        function renderCart() {
-            const cartContainer = document.getElementById('cart-items');
-            cartContainer.innerHTML = '';
-            
-            cartItems.forEach((item) => {
-                const isSelected = selectedBookIds.includes(item.id);
-                const itemElement = document.createElement('div');
-                itemElement.className = 'border-b border-gray-100 last:border-b-0';
-                
-                itemElement.innerHTML = `
-                    <!-- Mobile Layout -->
-                    <div class="lg:hidden p-4 hover:bg-gray-50 cursor-pointer relative transition-all duration-300 ${isSelected ? 'bg-blue-50 border-2 border-blue-300 rounded-lg shadow-md' : ''}" onclick="selectBook(${item.id})">
-                        ${isSelected ? '<div class="absolute top-2 right-2 z-10"><i class="fas fa-check-circle text-blue-500 text-xl"></i></div>' : ''}
-                        <div class="flex items-start gap-4 mb-4">
-                            <div class="relative">
-                                <img src="${item.image}" alt="${item.title}" class="w-16 h-20 object-cover rounded shadow-sm flex-shrink-0 ${isSelected ? 'ring-2 ring-blue-400' : ''}">
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <h3 class="font-medium text-gray-800 text-base mb-1 ${isSelected ? 'text-blue-800' : ''}">${item.title}</h3>
-                                <p class="text-sm text-gray-600 mb-1">${item.type}</p>
-                                <p class="text-sm">
-                                    <a href="#" class="text-blue-600   hover:text-blue-800">${item.author}</a>
-                                    <span class="text-gray-600"> (Author)</span>
-                                </p>
-                            </div>
-                            <button onclick="event.stopPropagation(); removeItem(${item.id})" class="text-red-500 hover:text-red-700 p-2 flex-shrink-0">
-                                <i class="fas fa-trash text-lg"></i>
-                            </button>
-                        </div>
-                        <div class="flex justify-between items-center pt-2">
-                            <div class="flex items-center gap-2">
-                                <label class="text-sm text-gray-600 font-medium">Qty:</label>
-                                <input type="number" min="1" value="${item.quantity}" 
-                                       onchange="updateQuantity(${item.id}, this.value)" onclick="event.stopPropagation()"
-                                       class="w-12 text-center px-2 py-1 border border-gray-300 rounded focus:outline-none focus:border-orange-500">
-                            </div>
-                            <div class="text-lg font-medium text-gray-800">$${item.price.toFixed(2)}</div>
-                        </div>
+            <!-- Section 2: Contact Us -->
+            <div class="text-center md:text-left">
+                <h4 class="text-lg font-semibold text-gray-800 mb-4">Contact Us</h4>
+                <div class="space-y-2 text-sm text-gray-700">
+                    <p>Email: BestBookStore@gmail.com</p>
+                    <p>Phone number: 0123456</p>
+                </div>
+            </div>
+
+            <!-- Section 3: Follow Us -->
+            <div class="text-center md:text-left">
+                <h4 class="text-lg font-semibold text-gray-800 mb-4">Follow Us</h4>
+                <div class="flex justify-center md:justify-start space-x-3">
+                    <!-- Facebook -->
+                    <div class="  rounded">
+                        <img src="/PHOTO/fb.jpg" alt="Facebook" class="w-5 h-5">
                     </div>
-                    
-                    <!-- Desktop Layout -->
-                    <div class="hidden lg:flex items-center px-8 py-6 hover:bg-gray-50 cursor-pointer relative transition-all duration-300 ${isSelected ? 'bg-blue-50 border-2 border-blue-300 rounded-lg shadow-md' : ''}" onclick="selectBook(${item.id})">
-                        ${isSelected ? '<div class="absolute top-4 right-4 z-10"><i class="fas fa-check-circle text-blue-500 text-2xl"></i></div>' : ''}
-                        <div class="w-32 flex-shrink-0">
-                            <img src="${item.image}" alt="${item.title}" class="w-[162px] h-[241px] object-cover rounded shadow-sm mx-auto ${isSelected ? 'ring-2 ring-blue-400' : ''}">
-                        </div>
-                        <div class="flex-1 ml-6 md:mb-[178px]">
-                            <h3 class="font-medium text-gray-800 text-lg mb-1 ${isSelected ? 'text-blue-800' : ''}">${item.title}</h3>
-                            <p class="text-base text-gray-600 mb-1">${item.type}</p>
-                            <p class="text-base">
-                                <a href="#" class="text-blue-600  hover:text-blue-800">${item.author}</a>
-                                <span class="text-gray-600"> (Author)</span>
-                            </p>
-                        </div>
-                        <div class="w-24 text-center">
-                            <input type="number" min="1" value="${item.quantity}" 
-                                   onchange="updateQuantity(${item.id}, this.value)" onclick="event.stopPropagation()"
-                                   class="w-12 text-center px-2 py-2 border border-gray-300 rounded focus:outline-none focus:border-orange-500 text-base">
-                        </div>
-                        <div class="w-24 text-center">
-                            <span class="font-medium text-gray-800 text-lg">$${item.price.toFixed(2)}</span>
-                        </div>
-                        <div class="w-16 text-center">
-                            <button onclick="event.stopPropagation(); removeItem(${item.id})" class="text-red-500 hover:text-red-700 p-2">
-                                <i class="fas fa-trash text-lg"></i>
-                            </button>
-                        </div>
+                    <!-- Instagram -->
+                    <div class=" rounded">
+                        <img src="/PHOTO/in.jpg" alt="Instagram" class="w-5 h-5">
                     </div>
-                `;
-                
-                cartContainer.appendChild(itemElement);
-            });
-        }
-        
-        // Update item quantity
-        function updateQuantity(itemId, newQuantity) {
-            const quantity = parseInt(newQuantity);
-            if (quantity < 1) return;
-            
-            const item = cartItems.find(item => item.id === itemId);
-            if (item) {
-                item.quantity = quantity;
-                updateTotals();
-            }
-        }
-        
-        // Remove item from cart
-        function removeItem(itemId) {
-            cartItems = cartItems.filter(item => item.id !== itemId);
-            // Remove from selection if the item was selected
-            const index = selectedBookIds.indexOf(itemId);
-            if (index > -1) {
-                selectedBookIds.splice(index, 1);
-            }
-            renderCart();
-            updateTotals();
-        }
-        
-        // Update totals
-        function updateTotals() {
-            const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-            const totalPrice = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            
-            document.getElementById('total-quantity').textContent = totalQuantity;
-            document.getElementById('total-price').textContent = totalPrice.toFixed(2);
-            if (document.getElementById('cart-badge')) {
-                document.getElementById('cart-badge').textContent = totalQuantity;
-            }
-        }
-        
-        // Initialize the cart when the page loads
-        initializeCart();
-    </script>
-    <script src="/JS/index.js"></script>
+                    <!-- Twitter -->
+                    <div class=" rounded">
+                        <img src="/PHOTO/x.png" alt="Twitter" class="w-5 h-5">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Location -->
+            <div class="text-center md:text-left">
+                <h4 class="text-lg font-semibold text-gray-800 mb-4">Location</h4>
+                <div class="flex justify-center md:justify-start">
+                    <div class="w-64 h-40 rounded shadow-md overflow-hidden">
+                        <!-- Google Maps Embed -->
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.7412542918655!2d104.89551077481731!3d11.570397488630803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109517388680e15%3A0x63057e6682968f5!2sInstitute%20of%20Technology%20of%20Cambodia!5e0!3m2!1sen!2sus!4v1750468219617!5m2!1sen!2sus"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            class="w-full h-full">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright -->
+        <div class="text-center border-t border-gray-300 pt-6">
+            <p class="text-sm text-gray-700">© Bedimcode. All rights reserved</p>
+        </div>
+    </footer>
+<script src="/JS/4Card.js"></script>
+<script src="/JS/index.js"></script>
 </body>
 </html>

@@ -39,6 +39,3 @@ bestSellersContainer.addEventListener('wheel', (e) => {
                 bestSellersContainer.scrollLeft += e.deltaY;
             }
         });
- 
-
-//6 shopping cart functionality

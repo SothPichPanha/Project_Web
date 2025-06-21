@@ -1,4 +1,11 @@
-     // Store original values
+//menu toggle for mobile
+const menuButton = document.getElementById('menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+});
+
+ // Store original values
         const originalTotal = 62.93;
         let currentDiscount = 0; // 10% discount
         let promoApplied = true; // Start with promo applied
@@ -108,11 +115,10 @@
             const finalAmount = finalTotalEl.textContent;
             
             showCustomAlert(`Order confirmed! Thank you ${firstName} ${lastName}. Your total is ${finalAmount}.`, 'success');
-                 setTimeout(() => {
-        window.location.href = '/HTML/1Home_Page.html'; // Replace '/' with your homepage path if needed
-            }, 3000);
-
-        });
+            setTimeout(() => {
+                window.location.href = '/HTML/1Home_Page.html'; // Replace '/' with your homepage path if needed
+                    }, 3000);
+            });
         
         // Enter key support for promo code
         promoCodeInput.addEventListener('keypress', function(e) {

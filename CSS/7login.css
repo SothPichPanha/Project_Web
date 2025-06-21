@@ -1,0 +1,28 @@
+ 
+        /* Custom beige color */
+        .bg-beige { background-color: #F9DFB9; }
+        
+        /* Hide pages by default */
+        .page { display: none; }
+        .page.active { display: block; }
+        
+        /* Password toggle button styling */
+        .password-toggle {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #6b7280;
+            font-size: 14px;
+        }
+        
+        /* Input field styling with icon space */
+        .password-field {
+            position: relative;
+        }
+        
+        .password-input {
+            padding-right: 45px;
+        }
+ 

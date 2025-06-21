@@ -1,68 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Best Book Store Checkout</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="/CSS/6shop.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+     
     <link rel="stylesheet" href="/CSS/1Home_Page.css">
 </head>
 <body class="mx-8 sm:mx-10 bg-[#FBF3E6]">
-<header class="sticky top-0 bg-[#FBF3E6] z-50 py-4">
-    <div class="flex justify-between my-4 sm:items-center">
-        <!-- Hamburger Menu -->
-        <button id="menu-button" id="mobile-menu" class="sm:w-8 sm:h-8 sm:rounded-full sm:flex items-center sm:justify-center md:hidden">
-            <img src="/PHOTO/Menu.png" alt="">
-        </button>
+    <header class="sticky top-0 my-10 bg-[#FBF3E6] z-50">
+        <div class="flex justify-between my-4 sm:items-center">
+            <!-- Hamburger Menu -->
+            <button id="menu-button" id="mobile-menu" class="sm:w-8 sm:h-8 sm:rounded-full sm:flex items-center sm:justify-center md:hidden">
+                <img src="/PHOTO/Menu.png" alt="">
+            </button>
 
-        <!-- Navigation (Desktop) -->
-        <div id="home" class="hidden md:flex md:flex-col md:font-bold md:text-[20px] md:py-4 md:gap-4">
-            <nav>
-                <ul class="md:flex md:flex-row md:gap-4 md:items-center md:justify-center">
-                    <li><a href="#Home">Home</a></li>
-                    <li><a  href="#store"id="about-link">Store</a></li>
-                    <li><a href="#footer">About Us</a></li>
-                </ul>
-            </nav>
-        </div>
+            <!-- Navigation (Desktop) -->
+            <div class="hidden md:flex md:flex-col md:font-bold md:text-[20px] md:py-4 md:gap-4">
+                <nav>
+                    <ul class="md:flex md:flex-row md:gap-4 md:items-center md:justify-center">
+                        <li><a href="1Home_Page.html">Home</a></li>
+                        <li><a href="1Home_Page.html#store">Store</a></li>
+                        <li><a href="1Home_Page.html#footer">About Us</a></li>
+                    </ul>
+                </nav>
+            </div>
 
-        <!-- Logo -->
-        <div id="logo" class="flex items-center w-fit">
-            <img src="/PHOTO/Logo.png" alt="" class="sm:h-10 sm:w-25 h-8 w-15">
-            <h2 class="sm:py-4 font-bold sm:text-[20px] text-[15px]">Best Book Store</h2>
-        </div>
+            <!-- Logo -->
+            <div class="flex items-center w-fit">
+                <img src="/PHOTO/Logo.png" alt="" class="sm:h-10 sm:w-25 h-8 w-15">
+                <h2 class="sm:py-4 font-bold sm:text-[20px] text-[15px]">Best Book Store</h2>
+            </div>
 
-        <!-- Cart & Profile -->
-        <div class="w-fit sm:flex sm:items-center sm:gap-2 sm:my-2">
-            <div class="flex items-center gap-4">
-                <!-- Search Bar (Desktop) -->
-                <div class="hidden md:flex items-center bg-white rounded-full border border-gray-300 px-4 py-2 w-48">
-                    <input type="text" placeholder="Search" class="flex-1 outline-none text-sm bg-transparent">
-                    <img src="/PHOTO/search_icon.png" alt="">
+            <!-- Cart & Profile -->
+            <div class="w-fit sm:flex sm:items-center sm:gap-2 sm:my-2">
+                <div class="flex items-center gap-4">
+                    <!-- Search Bar (Desktop) -->
+                    <div class="hidden md:flex items-center bg-white rounded-full border border-gray-300 px-4 py-2 w-48">
+                        <input type="text" placeholder="Search" class="flex-1 outline-none text-sm bg-transparent">
+                        <img src="/PHOTO/search_icon.png" alt="">
+                    </div>
+
+                    <!-- Search Icon (Mobile) -->
+                    <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center md:hidden">
+                        <img src="/PHOTO/search.png" class="" alt="">
+                    </button>
+
+                    <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center">
+                        <a href="4Card.html"><img src="/PHOTO/Shopping Cart.png" alt=""></a>
+                    </button>
+
+                    <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center">
+                        <img src="/PHOTO/Customer.png" alt="">
+                    </button>
                 </div>
-                <button class="w-5 h-5 bg-orange-400 rounded-full sm:w-8 sm:h-8 flex items-center justify-center md:hidden">
-                    <img src="/PHOTO/search.png" class="" alt="">
-                </button>
-                    <a href="4Card.html"><button class="w-5 h-5 bg-blu rounded-full sm:w-8 sm:h-8 flex items-center justify-center">
-                    <img src="/PHOTO/Shopping Cart.png" alt="">
-                </button></a>
-                
-
-                <button class="w-5 h-5 bg-orange rounded-full sm:w-8 sm:h-8 flex items-center justify-center">
-                    <img src="/PHOTO/Customer.png" alt="">
-                </button>
             </div>
         </div>
-    </div>
 
-    <!-- Mobile Navigation Menu -->
-    <div id="mobile-menu" id="menu-button" class="sm:hidden md:hidden hidden absolute top-full left-0 w-full bg-[#FBF3E6] z-50 p-4 space-y-4 shadow-md sm:absolute sm:top-full sm:left-0 sm:w-full sm:bg-[#FBF3E6] sm:z-50 sm:p-4 sm:space-y-4 sm:shadow-md">
-        <a href="#Home" class="block text-lg hover:text-gray-500 transition-all">Home</a>
-        <a href="#store" id="about-link" class="block text-lg hover:text-gray-500 transition-all">Store</a>
-        <a href="#footer" class="block text-lg hover:text-gray-500 transition-all">About Us</a>
-    </div>
-</header>
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="sm:hidden md:hidden hidden absolute top-full left-0 w-full bg-[#FBF3E6] z-50 p-4 space-y-4 shadow-md">
+            <a href="1Home_Page.html" class="block text-lg hover:text-gray-500 transition-all">Home</a>
+            <a href="1Home_Page.html#store" class="block text-lg hover:text-gray-500 transition-all">Store</a>
+            <a href="1Home_Page.html#footer" class="block text-lg hover:text-gray-500 transition-all">About Us</a>
+        </div>
+    </header>
 <main>
     <div class="max-w-6xl mx-auto px-4">
         <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">Best Book Store Checkout</h1>
@@ -116,7 +119,7 @@
                         </div>
                     </div>
                     
-                    <div class="card-option relative w-20 h-20 rounded-lg  cursor-pointer transition duration-300 bg-white" data-card="wing">
+                    <div class="card-option relative w-20 h-20 rounded-lg  cursor-pointer transition duration-300 bg-white" data-card="ACLEDA">
                         <div class="w-full h-full flex items-center justify-center">
                             <img src="/PHOTO/ace.jpg" alt="Wing" class="w-full h-full object-cover rounded">
                         </div>
@@ -213,15 +216,15 @@
             </div>
         </div>
     </div>
-<!-- alert style -->
-<div id="custom-alert" class="hidden fixed top-5 right-5 bg-blue-500 text-white px-4 py-3 rounded shadow-lg z-50 flex justify-between items-center min-w-[250px] max-w-xs">
-  <span id="alert-message">Message</span>
-  <button onclick="closeCustomAlert()" class="ml-4 font-bold text-xl">×</button>
-</div>
-
+    <!-- alert style -->
+    <div id="custom-alert" class="hidden fixed top-5 right-5 bg-blue-500 text-white px-4 py-3 rounded shadow-lg z-50 flex justify-between items-center min-w-[250px] max-w-xs">
+    <span id="alert-message">Message</span>
+    <button onclick="closeCustomAlert()" class="ml-4 font-bold text-xl">×</button>
+    </div>
 </main>
     
     
 <script src="/JS/6Shop.js"></script>
+<script src="/JS/index.js"></script>
 </body>
 </html>

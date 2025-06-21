@@ -5,8 +5,6 @@
     <title>Home Page</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="/CSS/1Home_Page.css">
-    
-
 </head>
 <body class="mx-8 sm:mx-10 bg-[#FBF3E6]">
     <p id="Home"></p>   
@@ -532,57 +530,76 @@
 </div>
 </main>
 <p id="footer"></p>
-<footer>
-     <div class="px-12 pt-28 pb-7 mt-44 w-full bg-[#F7DCA9] max-md:px-5 max-md:pt-24 max-md:mt-10 max-md:max-w-full">
-            <div class="flex gap-5 max-md:flex-col max-md:">
-                <div class="w-[67%] max-md:ml-0 max-md:w-full">
-                    <div class="flex flex-col w-full max-md:mt-10 max-md:max-w-full">
-                        <div class="max-md:max-w-full">
-                            <div class="flex gap-5 max-md:flex-col max-md:">
-                                <div class="w-[39%] max-md:ml-0 max-md:w-full">
-                                    <div class="flex flex-col w-full font-bold max-md:mt-10">
-                                        <div class="flex self-start text-2xl text-black">
-                                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4b9b37253c204f6f857df942d330cc444589a9ab?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain shrink-0 aspect-[2.2] w-[88px]" />
-                                            <div class="self-start mt-3 basis-auto">Best Book Store</div>
-                                        </div>
-                                        <div class="self-end mt-8 text-base text-black w-[253px]">
-                                            Read. Learn. Grow.
-                                            <br />
-                                            Providing quality books and friendly service since 2005.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ml-5 w-[33%] max-md:ml-0 max-md:w-full">
-                                    <div class="flex flex-col grow items-start mt-3 text-base font-bold text-black max-md:mt-10">
-                                        <div class="text-2xl text-black">Contact Us</div>
-                                        <div class="self-stretch mt-8">Email: BestBookStore@gmail.com</div>
-                                        <div class="mt-5">Phone number: 0123456</div>
-                                    </div>
-                                </div>
-                                <div class="ml-5 w-[27%] max-md:ml-0 max-md:w-full">
-                                    <div class="flex flex-col mt-3 text-xl font-semibold leading-snug text-black max-md:mt-10">
-                                        <div class="self-center">Follow Us</div>
-                                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/60f6cb5a32e85004a72ce7a8a4008b0400fd6a75?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain mt-1.5 aspect-[5] w-[205px]" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex gap-1 self-end mt-56 mr-24 text-xs leading-snug text-black max-md:mt-10 max-md:mr-2.5">
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6d59b69f4a44b1259354e3619b9ea0bd84352b1c?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain shrink-0 my-auto w-3 aspect-square" />
-                            <div class="basis-auto">Bedimcode. All rights reserved</div>
-                        </div>
+    <footer class="w-full bg-[#F9DFB9] py-10 px-6 md:px-20">
+        <!-- Main Footer Content -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <!-- Section 1: Brand -->
+            <div class="text-center md:text-left">
+                <!-- Logo -->
+                <div class="flex items-center justify-center md:justify-start mb-3">
+                    <div class=" mr-2">
+                        <img src="/PHOTO/Logo.png" alt="Books" class="w-6 h-6">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800">Best Book Store</h3>
+                </div>
+                <p class="text-sm text-gray-700 leading-relaxed max-w-xs mx-auto md:mx-0">
+                    Read. Learn. Grow. Providing quality books and friendly service since 2005.
+                </p>
+            </div>
+
+            <!-- Section 2: Contact Us -->
+            <div class="text-center md:text-left">
+                <h4 class="text-lg font-semibold text-gray-800 mb-4">Contact Us</h4>
+                <div class="space-y-2 text-sm text-gray-700">
+                    <p>Email: BestBookStore@gmail.com</p>
+                    <p>Phone number: 0123456</p>
+                </div>
+            </div>
+
+            <!-- Section 3: Follow Us -->
+            <div class="text-center md:text-left">
+                <h4 class="text-lg font-semibold text-gray-800 mb-4">Follow Us</h4>
+                <div class="flex justify-center md:justify-start space-x-3">
+                    <!-- Facebook -->
+                    <div class="  rounded">
+                        <img src="/PHOTO/fb.jpg" alt="Facebook" class="w-5 h-5">
+                    </div>
+                    <!-- Instagram -->
+                    <div class=" rounded">
+                        <img src="/PHOTO/in.jpg" alt="Instagram" class="w-5 h-5">
+                    </div>
+                    <!-- Twitter -->
+                    <div class=" rounded">
+                        <img src="/PHOTO/x.png" alt="Twitter" class="w-5 h-5">
                     </div>
                 </div>
-                <div class="ml-5 w-[33%] max-md:ml-0 max-md:w-full">
-                    <div class="flex flex-col mt-3 text-2xl font-bold text-black whitespace-nowrap max-md:mt-10 max-md:max-w-full">
-                        <div class="self-center">Location</div>
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/88cd493e9194f81272e008c9759dde9b7b9b855a?placeholderIfAbsent=true&apiKey=f68c3485857d492bb49174a166aa7221" class="object-contain mt-2.5 w-full aspect-[1.38] max-md:max-w-full" />
+            </div>
+
+            <!-- Section 4: Location -->
+            <div class="text-center md:text-left">
+                <h4 class="text-lg font-semibold text-gray-800 mb-4">Location</h4>
+                <div class="flex justify-center md:justify-start">
+                    <div class="w-64 h-40 rounded shadow-md overflow-hidden">
+                        <!-- Google Maps Embed -->
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.7412542918655!2d104.89551077481731!3d11.570397488630803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109517388680e15%3A0x63057e6682968f5!2sInstitute%20of%20Technology%20of%20Cambodia!5e0!3m2!1sen!2sus!4v1750468219617!5m2!1sen!2sus"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            class="w-full h-full">
+                        </iframe>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+
+        <!-- Bottom Copyright -->
+        <div class="text-center border-t border-gray-300 pt-6">
+            <p class="text-sm text-gray-700">© Bedimcode. All rights reserved</p>
+        </div>
+    </footer>
 
 <script src="/JS/index.js"></script>
 </body>

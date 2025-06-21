@@ -21,7 +21,7 @@
                 <ul class="md:flex md:flex-row md:gap-4 md:items-center md:justify-center">
                     <li><a href="1Home_Page.html">Home</a></li>
                     <li><a href="1Home_Page.html#store">Store</a></li>
-                    <li><a href="services.html">About Us</a></li>
+                    <li><a href="#footer">About Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -62,7 +62,7 @@
     <div id="mobile-menu" id="menu-button" class="sm:hidden md:hidden hidden absolute top-full left-0 w-full bg-[#FBF3E6] z-50 p-4 space-y-4 shadow-md sm:absolute sm:top-full sm:left-0 sm:w-full sm:bg-[#FBF3E6] sm:z-50 sm:p-4 sm:space-y-4 sm:shadow-md">
         <a href="1Home_Page.html" class="block text-lg hover:text-gray-500 transition-all">Home</a>
         <a href="1Home_Page.html#store" class="block text-lg hover:text-gray-500 transition-all">Store</a>
-        <a href="about.html" class="block text-lg hover:text-gray-500 transition-all">About Us</a>
+        <a href="#footer" class="block text-lg hover:text-gray-500 transition-all">About Us</a>
 
     </div>
 </header>
@@ -292,11 +292,78 @@
         </div>
 </main>
 
+<p id="footer"></p>
+   <footer class="w-full bg-[#F9DFB9] py-10 px-6 md:px-20">
+        <!-- Main Footer Content -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <!-- Section 1: Brand -->
+            <div class="text-center md:text-left">
+                <!-- Logo -->
+                <div class="flex items-center justify-center md:justify-start mb-3">
+                    <div class=" mr-2">
+                        <img src="/PHOTO/Logo.png" alt="Books" class="w-6 h-6">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800">Best Book Store</h3>
+                </div>
+                <p class="text-sm text-gray-700 leading-relaxed max-w-xs mx-auto md:mx-0">
+                    Read. Learn. Grow. Providing quality books and friendly service since 2005.
+                </p>
+            </div>
 
-<footer>
-    
-</footer>
+            <!-- Section 2: Contact Us -->
+            <div class="text-center md:text-left">
+                <h4 class="text-lg font-semibold text-gray-800 mb-4">Contact Us</h4>
+                <div class="space-y-2 text-sm text-gray-700">
+                    <p>Email: BestBookStore@gmail.com</p>
+                    <p>Phone number: 0123456</p>
+                </div>
+            </div>
 
-<script src="/JS/index.js"></script>
+            <!-- Section 3: Follow Us -->
+            <div class="text-center md:text-left">
+                <h4 class="text-lg font-semibold text-gray-800 mb-4">Follow Us</h4>
+                <div class="flex justify-center md:justify-start space-x-3">
+                    <!-- Facebook -->
+                    <div class="  rounded">
+                        <img src="/PHOTO/fb.jpg" alt="Facebook" class="w-5 h-5">
+                    </div>
+                    <!-- Instagram -->
+                    <div class=" rounded">
+                        <img src="/PHOTO/in.jpg" alt="Instagram" class="w-5 h-5">
+                    </div>
+                    <!-- Twitter -->
+                    <div class=" rounded">
+                        <img src="/PHOTO/x.png" alt="Twitter" class="w-5 h-5">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Location -->
+            <div class="text-center md:text-left">
+                <h4 class="text-lg font-semibold text-gray-800 mb-4">Location</h4>
+                <div class="flex justify-center md:justify-start">
+                    <div class="w-64 h-40 rounded shadow-md overflow-hidden">
+                        <!-- Google Maps Embed -->
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.7412542918655!2d104.89551077481731!3d11.570397488630803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109517388680e15%3A0x63057e6682968f5!2sInstitute%20of%20Technology%20of%20Cambodia!5e0!3m2!1sen!2sus!4v1750468219617!5m2!1sen!2sus"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            class="w-full h-full">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright -->
+        <div class="text-center border-t border-gray-300 pt-6">
+            <p class="text-sm text-gray-700">© Bedimcode. All rights reserved</p>
+        </div>
+    </footer>
+
+    <script src="/JS/index.js"></script>
 </body>
 </html>
